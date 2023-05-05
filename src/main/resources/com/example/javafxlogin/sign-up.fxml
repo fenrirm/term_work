@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.SignUpController">
+<children>
+    <AnchorPane prefHeight="534.0" prefWidth="352.0" style="-fx-background-color: #2F9BFE;">
+        <children>
+            <ImageView fitHeight="199.0" fitWidth="245.0" layoutX="21.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../../../test.png" />
+                </image>
+            </ImageView>
+            <Label layoutX="82.0" layoutY="29.0" text="TESTMAKER" textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="25.0" />
+                </font>
+            </Label>
+            <Label fx:id="createTestsLabel" alignment="CENTER" layoutX="25.0" layoutY="293.0" prefHeight="28.0" prefWidth="227.0" text="- create tests " textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="createGroupsLabel" alignment="CENTER" layoutX="25.0" layoutY="333.0" prefHeight="28.0" prefWidth="227.0" text="- create groups" textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="createCoursesLabel" alignment="CENTER" layoutX="25.0" layoutY="374.0" prefHeight="28.0" prefWidth="227.0" text="- create courses" textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="25.0" layoutY="453.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="494.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
+                <font>
+                    <Font name="Consolas Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="passTestsLabel" alignment="CENTER" layoutX="25.0" layoutY="412.0" prefHeight="28.0" prefWidth="227.0" text="- pass tests " textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Label>
+        </children>
+    </AnchorPane>
+    <AnchorPane prefHeight="534.0" prefWidth="474.0" style="-fx-background-color: #2F9BFE;">
+        <children>
+            <Pane layoutX="20.0" layoutY="37.0" prefHeight="499.0" prefWidth="371.0" style="-fx-background-color: #0181FF;">
+                <children>
+                    <Label fx:id="nameLabel" layoutX="14.0" layoutY="143.0" prefHeight="28.0" prefWidth="151.0" text="Name:" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="surnameLabel" layoutX="14.0" layoutY="195.0" prefHeight="28.0" prefWidth="151.0" text="Surname:" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font></Label>
+                    <Label fx:id="phoneNumberLabel" layoutX="14.0" layoutY="307.0" prefHeight="28.0" prefWidth="151.0" text="Phone number: " textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font></Label>
+                    <Label fx:id="passwordLabel" layoutX="14.0" layoutY="357.0" prefHeight="28.0" prefWidth="151.0" text="Password:" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font></Label>
+                    <Button fx:id="button_sign_up" layoutX="102.0" layoutY="402.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="158.0" style="-fx-background-color: #2F9BFE; -fx-cursor: hand;" text="Sign Up" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font></Button>
+                    <TextField fx:id="tf_name" layoutX="181.0" layoutY="145.0" prefHeight="25.0" prefWidth="168.0" />
+                    <TextField fx:id="tf_surname" layoutX="181.0" layoutY="197.0" prefHeight="25.0" prefWidth="168.0" />
+                    <TextField fx:id="tf_phone_number" layoutX="181.0" layoutY="309.0" prefHeight="25.0" prefWidth="168.0" />
+                    <Label fx:id="teacherOrStudentLabel" layoutX="14.0" layoutY="252.0" prefHeight="28.0" prefWidth="158.0" text="Teacher or student?" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="15.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="alreadyAMemberLabel" alignment="CENTER" layoutX="49.0" layoutY="448.0" prefHeight="25.0" prefWidth="151.0" text="Already a member?" textFill="WHITE">
+                        <font>
+                            <Font name="Consolas Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Button fx:id="button_log_in" layoutX="197.0" layoutY="448.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #ffffff00; -fx-cursor: hand;" text="Log In" underline="true">
+                        <font>
+                            <Font name="Consolas Bold" size="12.0" />
+                        </font>
+                    </Button>
+                  <ImageView fitHeight="113.0" fitWidth="124.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="rb_student" layoutX="181.0" layoutY="258.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="80.0" text="Student" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rb_teacher" layoutX="265.0" layoutY="258.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="80.0" text="Teacher" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <PasswordField fx:id="tf_password" layoutX="181.0" layoutY="359.0" prefHeight="25.0" prefWidth="168.0" />
+                </children>
+            </Pane>
+            <Button fx:id="uaLanguageButton" layoutX="308.0" layoutY="542.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
+            <Button fx:id="enLanguageButton" layoutX="355.0" layoutY="542.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
+            <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="316.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ukraine.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="362.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../american.png" />
+               </image>
+            </ImageView>
+        </children>
+    </AnchorPane>
+</children>
+</HBox>

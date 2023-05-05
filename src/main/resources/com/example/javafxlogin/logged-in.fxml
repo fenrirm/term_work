@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="489.0" prefWidth="708.0" style="-fx-background-color: #b7f9ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.LoggedInController">
+   <children>
+      <StackPane fx:id="stackPane" layoutY="10.0" prefHeight="143.0" prefWidth="157.0">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="153.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../../../no-photo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadPhoto" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </StackPane>
+      <VBox layoutY="166.0" prefHeight="115.0" prefWidth="157.0">
+         <children>
+            <Label fx:id="nameLabel" alignment="CENTER" prefHeight="29.0" prefWidth="157.0" text="Name:">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="positionLabel" alignment="CENTER" prefHeight="37.0" prefWidth="157.0" text="Position:">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneNumberLabel" alignment="CENTER" prefHeight="40.0" prefWidth="159.0" text="Phone number:">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="anchorPane2" layoutX="189.0" layoutY="14.0" prefHeight="411.0" prefWidth="504.0">
+         <children>
+            <VBox layoutX="3.0" layoutY="5.0" prefHeight="376.0" prefWidth="501.0">
+               <children>
+                  <HBox prefHeight="23.0" prefWidth="496.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="496.0" text="My tests">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="28.0" prefWidth="496.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #496366;" text="Create new test" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #496366;" text="Delete test" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <ScrollPane fx:id="scrollPane" prefHeight="323.0" prefWidth="496.0">
+                    <content>
+                      <AnchorPane fx:id="scrollAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="319.0" prefWidth="493.0">
+                           <children>
+                              <ListView layoutY="-3.0" prefHeight="323.0" prefWidth="496.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <VBox layoutX="32.0" layoutY="273.0" prefHeight="200.0" prefWidth="91.0" spacing="15.0">
+         <children>
+            <Button fx:id="myTestsButton" mnemonicParsing="false" onAction="#myTests" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My tests" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="myTestsButton1" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Results" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="myStudentsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My students" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="MyGroupsButton" mnemonicParsing="false" prefHeight="19.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My groups" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="MyCoursesButton" mnemonicParsing="false" prefHeight="19.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My courses" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="494.0" layoutY="433.0" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="uaLanguageButton" layoutX="8.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000; -fx-cursor: hand;" />
+            <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="16.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ukraine.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="enLanguageButton" layoutX="60.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000; -fx-cursor: hand;" />
+            <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="68.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../american.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="button_log_out" layoutX="108.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
