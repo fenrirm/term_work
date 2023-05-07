@@ -1,6 +1,8 @@
 package com.example.javafxlogin;
 
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import users.User;
 
 
 import java.io.File;
@@ -45,8 +48,7 @@ public class LoggedInController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        button_log_out.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "Log In", null, null, null, 0, null));
-
+        button_log_out.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "Log In"));
     }
 
     public void uploadPhoto(){
@@ -83,7 +85,7 @@ public class LoggedInController implements Initializable {
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/javafx", "fenrirm", "fenrirm");
             psUpdate = connection.prepareStatement("UPDATE user SET image = ? WHERE phoneNumber = ?");
             psUpdate.setString(1, imagePath);
-            System.out.println(imagePath);
+            //System.out.println(imagePath);
             psUpdate.setString(2, phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
             System.out.println(phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
             psUpdate.executeUpdate();

@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import users.User;
 
 import java.net.URL;
 import java.util.Locale;
@@ -46,6 +47,7 @@ public class SignUpController implements Initializable {
 
     private ResourceBundle bundle;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -58,29 +60,19 @@ public class SignUpController implements Initializable {
             if (!tf_name.getText().trim().isEmpty() && !tf_surname.getText().trim().isEmpty() &&
                     !tf_phone_number.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
                 if(!tf_phone_number.getText().matches("[0-9]+")){
-                    System.out.println("You've entered wrong input in phone number");
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("PLease enter correct symbols in the line \"phone number\"");
-                    alert.show();
+                    DBUtils.showAlertMessage("PLease enter correct symbols in the line \"phone number\"");
                 }
+                //User user = new User(nameLabel.getText(), surnameLabel.getText(), toggleName, Integer.parseInt(phoneNumberLabel.getText()), passwordLabel.getText(), null);
                 DBUtils.signUpUser(e, tf_name.getText(), tf_surname.getText(),
                         toggleName, Integer.parseInt(tf_phone_number.getText()), tf_password.getText());
             } else {
-                System.out.println("Please fill in all information!");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("PLease fill in all information to sign up successfully!");
-                alert.show();
+                DBUtils.showAlertMessage("PLease fill in all information to sign up successfully!");
             }
 
 
         });
 
-        button_log_in.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "hello-view.fxml", "log in page", null, null, null, 0, null);
-            }
-        });
+        button_log_in.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "log in page"));
 
 
 
