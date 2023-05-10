@@ -92,8 +92,8 @@
                   <PasswordField fx:id="tf_password" layoutX="181.0" layoutY="197.0" prefHeight="25.0" prefWidth="168.0" />
                </children>
             </Pane>
-            <Button fx:id="uaLanguageButton" layoutX="313.0" layoutY="543.0" mnemonicParsing="false" onAction="#changeToUkrainian" prefHeight="15.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
-            <Button fx:id="enLanguageButton" layoutX="355.0" layoutY="543.0" mnemonicParsing="false" onAction="#changeToEnglish" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
+            <Button fx:id="uaLanguageButton" layoutX="313.0" layoutY="543.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
+            <Button fx:id="enLanguageButton" layoutX="355.0" layoutY="543.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
             <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="320.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../ukraine.png" />

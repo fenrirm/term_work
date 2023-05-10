@@ -8,9 +8,6 @@ public class User {
     private String imagePath;
 
 
-    public User(){
-
-    }
     public User(String name, String surname, String position, int phoneNumber, String password, String imagePath){
         this.name = name;
         this.surname = surname;
@@ -18,6 +15,12 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.imagePath = imagePath;
+    }
+
+    public User(String name, String surname, int phoneNumber){
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getName() {

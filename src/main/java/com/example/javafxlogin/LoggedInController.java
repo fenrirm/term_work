@@ -1,20 +1,14 @@
 package com.example.javafxlogin;
 
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import users.User;
 
 
 import java.io.File;
@@ -31,7 +25,6 @@ public class LoggedInController implements Initializable {
 
     @FXML
     private ImageView imageView;
-
     @FXML
     public StackPane stackPane;
 
@@ -64,8 +57,6 @@ public class LoggedInController implements Initializable {
             try{
                 Image image = new Image(new FileInputStream(selectedFile));
                 addImageToTheDatabase(selectedFile.getAbsolutePath());
-                //System.out.println(image.getUrl());
-                //System.out.println(selectedFile.getAbsolutePath());
                 imageView.setImage(image);
             } catch (FileNotFoundException e) {
                 System.out.println("Error while downloading image: "+ e.getMessage());
@@ -80,14 +71,11 @@ public class LoggedInController implements Initializable {
     private void addImageToTheDatabase(String imagePath)  {
         Connection connection = null;
         PreparedStatement psUpdate = null;
-
         try{
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/javafx", "fenrirm", "fenrirm");
             psUpdate = connection.prepareStatement("UPDATE user SET image = ? WHERE phoneNumber = ?");
             psUpdate.setString(1, imagePath);
-            //System.out.println(imagePath);
             psUpdate.setString(2, phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
-            System.out.println(phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
             psUpdate.executeUpdate();
 
         } catch (SQLException e) {
@@ -108,7 +96,6 @@ public class LoggedInController implements Initializable {
                 }
             }
         }
-
 
 
     }

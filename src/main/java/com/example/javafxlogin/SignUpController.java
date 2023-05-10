@@ -1,11 +1,8 @@
 package com.example.javafxlogin;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import users.User;
 
 import java.net.URL;
 import java.util.Locale;
@@ -48,6 +45,7 @@ public class SignUpController implements Initializable {
     private ResourceBundle bundle;
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -74,56 +72,28 @@ public class SignUpController implements Initializable {
 
         button_log_in.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "log in page"));
 
+        uaLanguageButton.setOnAction(event -> setLanguage(new Locale("ua")));
+        enLanguageButton.setOnAction(event -> setLanguage(new Locale("en")) );
 
 
-
-        uaLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                bundle = ResourceBundle.getBundle("resources", new Locale("ua"));
-                createTestsLabel.setText(bundle.getString("createTestsLabel"));
-                createGroupsLabel.setText(bundle.getString("createGroupsLabel"));
-                createCoursesLabel.setText(bundle.getString("createCoursesLabel"));
-                passTestsLabel.setText(bundle.getString("passTestsLabel"));
-                getResultsLabel.setText(bundle.getString("getResultsLabel"));
-                getStatisticsLabel.setText(bundle.getString("getStatisticsLabel"));
-                phoneNumberLabel.setText(bundle.getString("phoneNumberLabel"));
-                passwordLabel.setText(bundle.getString("passwordLabel"));
-                alreadyAMemberLabel.setText(bundle.getString("alreadyAMemberLabel"));
-                nameLabel.setText(bundle.getString("nameLabel"));
-                surnameLabel.setText(bundle.getString("surnameLabel"));
-                teacherOrStudentLabel.setText(bundle.getString("teacherOrStudentLabel"));
-                rb_student.setText(bundle.getString("rb_student"));
-                rb_teacher.setText(bundle.getString("rb_teacher"));
-                button_log_in.setText(bundle.getString("button_log_in"));
-                button_sign_up.setText(bundle.getString("button_sign_up"));
-
-            }
-        });
-
-        enLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                bundle = ResourceBundle.getBundle("resources", new Locale("en"));
-                createTestsLabel.setText(bundle.getString("createTestsLabel"));
-                createGroupsLabel.setText(bundle.getString("createGroupsLabel"));
-                createCoursesLabel.setText(bundle.getString("createCoursesLabel"));
-                passTestsLabel.setText(bundle.getString("passTestsLabel"));
-                getResultsLabel.setText(bundle.getString("getResultsLabel"));
-                getStatisticsLabel.setText(bundle.getString("getStatisticsLabel"));
-                phoneNumberLabel.setText(bundle.getString("phoneNumberLabel"));
-                passwordLabel.setText(bundle.getString("passwordLabel"));
-                alreadyAMemberLabel.setText(bundle.getString("alreadyAMemberLabel"));
-                nameLabel.setText(bundle.getString("nameLabel"));
-                surnameLabel.setText(bundle.getString("surnameLabel"));
-                teacherOrStudentLabel.setText(bundle.getString("teacherOrStudentLabel"));
-                rb_student.setText(bundle.getString("rb_student"));
-                rb_teacher.setText(bundle.getString("rb_teacher"));
-                button_log_in.setText(bundle.getString("button_log_in"));
-                button_sign_up.setText(bundle.getString("button_sign_up"));
-
-            }
-        });
-
+    }
+    private void setLanguage(Locale locale) {
+        bundle = ResourceBundle.getBundle("resources", locale);
+        createTestsLabel.setText(bundle.getString("createTestsLabel"));
+        createGroupsLabel.setText(bundle.getString("createGroupsLabel"));
+        createCoursesLabel.setText(bundle.getString("createCoursesLabel"));
+        passTestsLabel.setText(bundle.getString("passTestsLabel"));
+        getResultsLabel.setText(bundle.getString("getResultsLabel"));
+        getStatisticsLabel.setText(bundle.getString("getStatisticsLabel"));
+        phoneNumberLabel.setText(bundle.getString("phoneNumberLabel"));
+        passwordLabel.setText(bundle.getString("passwordLabel"));
+        alreadyAMemberLabel.setText(bundle.getString("alreadyAMemberLabel"));
+        nameLabel.setText(bundle.getString("nameLabel"));
+        surnameLabel.setText(bundle.getString("surnameLabel"));
+        teacherOrStudentLabel.setText(bundle.getString("teacherOrStudentLabel"));
+        rb_student.setText(bundle.getString("rb_student"));
+        rb_teacher.setText(bundle.getString("rb_teacher"));
+        button_log_in.setText(bundle.getString("button_log_in"));
+        button_sign_up.setText(bundle.getString("button_sign_up"));
     }
 }
