@@ -1,4 +1,4 @@
-package users;
+package com.example.users;
 
 public class User {
     private String name, surname;

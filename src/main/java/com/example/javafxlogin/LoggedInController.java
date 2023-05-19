@@ -1,6 +1,7 @@
 package com.example.javafxlogin;
 
 
+import com.example.database_utils.DatabaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,7 +16,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
-import java.sql.*;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
@@ -38,14 +38,13 @@ public class LoggedInController implements Initializable {
     private Label phoneNumberLabel;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         button_log_out.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "Log In"));
     }
 
+    @FXML
     public void uploadPhoto(){
-
 
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter filter =
@@ -56,7 +55,8 @@ public class LoggedInController implements Initializable {
         if(selectedFile != null){
             try{
                 Image image = new Image(new FileInputStream(selectedFile));
-                addImageToTheDatabase(selectedFile.getAbsolutePath());
+                //addImageToTheDatabase(selectedFile.getAbsolutePath());
+                DatabaseHandler.addImage(selectedFile.getAbsolutePath(),phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
                 imageView.setImage(image);
             } catch (FileNotFoundException e) {
                 System.out.println("Error while downloading image: "+ e.getMessage());
@@ -68,7 +68,7 @@ public class LoggedInController implements Initializable {
 
     }
 
-    private void addImageToTheDatabase(String imagePath)  {
+    /*private void addImageToTheDatabase(String imagePath)  {
         Connection connection = null;
         PreparedStatement psUpdate = null;
         try{
@@ -98,11 +98,7 @@ public class LoggedInController implements Initializable {
         }
 
 
-    }
-
-    public void myTests(){
-
-    }
+    }*/
 
     public void setUserInformation(String name, String surname, String position, int phoneNumber, String image){
         nameLabel.setText(nameLabel.getText()+" "+name+" "+surname);
@@ -116,4 +112,5 @@ public class LoggedInController implements Initializable {
         }
 
     }
+
 }

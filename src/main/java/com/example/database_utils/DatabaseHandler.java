@@ -1,6 +1,6 @@
-package database_utils;
+package com.example.database_utils;
 
-import users.User;
+import com.example.users.User;
 
 import java.sql.*;
 
@@ -72,6 +72,19 @@ public class DatabaseHandler {
             throw e;
         }
         return null;
+    }
+
+    public static void addImage(String imagePath, String phoneNumber){
+        String sql = "UPDATE user SET image = ? WHERE phoneNumber = ?";
+        try(Connection connection = getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setString(1, imagePath);
+            preparedStatement.setString(2, phoneNumber);
+            preparedStatement.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
     }
 
 

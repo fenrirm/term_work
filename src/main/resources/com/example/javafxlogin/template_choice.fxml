@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="283.0" prefWidth="452.0" style="-fx-background-color: #b7f9ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.TemplateChoiceController">
+   <children>
+      <Pane layoutY="31.0" prefHeight="206.0" prefWidth="148.0">
+         <children>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="15.0" prefHeight="31.0" prefWidth="80.0" text="Template #1">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonCreateTemplate1" layoutX="48.0" layoutY="173.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Create" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Button>
+            <StackPane fx:id="stackPane1" layoutX="16.0" layoutY="41.0" prefHeight="122.0" prefWidth="120.0">
+               <children>
+                  <Rectangle fx:id="rectangleShape1" arcHeight="5.0" arcWidth="5.0" fill="#f6f6f6" height="124.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+                  <Label fx:id="labelTemplate1" alignment="TOP_LEFT" prefHeight="119.0" prefWidth="109.0" text="12 tests with 4 variants of answers and 1 right answer." wrapText="true">
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <Pane layoutX="152.0" layoutY="31.0" prefHeight="206.0" prefWidth="148.0">
+         <children>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="31.0" prefWidth="80.0" text="Template #2">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonCreateTemplate2" layoutX="48.0" layoutY="173.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Create" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font></Button>
+            <StackPane fx:id="stackPane11" layoutX="16.0" layoutY="41.0" prefHeight="122.0" prefWidth="120.0">
+               <children>
+                  <Rectangle fx:id="rectangleShape11" arcHeight="5.0" arcWidth="5.0" fill="#f6f6f6" height="124.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+                  <Label fx:id="labelTemplate11" alignment="TOP_LEFT" prefHeight="119.0" prefWidth="109.0" text="12 open questions with field to write your own answer." wrapText="true">
+                     <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <Pane layoutX="304.0" layoutY="31.0" prefHeight="206.0" prefWidth="148.0">
+         <children>
+            <Label alignment="CENTER" layoutX="27.0" layoutY="14.0" prefHeight="31.0" prefWidth="80.0" text="Template #3">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font></Label>
+            <Button fx:id="buttonCreateTemplate3" layoutX="49.0" layoutY="173.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Create" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="12.0" />
+               </font></Button>
+            <StackPane fx:id="stackPane12" layoutX="17.0" layoutY="41.0" prefHeight="122.0" prefWidth="120.0">
+               <children>
+                  <Rectangle fx:id="rectangleShape12" arcHeight="5.0" arcWidth="5.0" fill="#f6f6f6" height="124.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+                  <Label fx:id="labelTemplate12" alignment="TOP_LEFT" prefHeight="119.0" prefWidth="109.0" text="6 open questions with field to write your own answer and 6 tests with 4 variants of answer and 1 right answer." wrapText="true">
+                     <font>
+                        <Font name="Consolas Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <Pane layoutX="348.0" layoutY="248.0" prefHeight="40.0" prefWidth="103.0">
+         <children>
+            <Button fx:id="uaLanguageButton" layoutX="8.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000; -fx-cursor: hand;" />
+            <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="16.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ukraine.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="enLanguageButton" layoutX="60.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000; -fx-cursor: hand;" />
+            <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="68.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../american.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

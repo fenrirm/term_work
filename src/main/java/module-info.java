@@ -6,6 +6,9 @@ module com.example.javafxlogin {
 
     opens com.example.javafxlogin to javafx.fxml;
     exports com.example.javafxlogin;
-    exports database_utils;
-    opens database_utils to javafx.fxml;
+    exports com.example.database_utils;
+    opens com.example.database_utils to javafx.fxml;
+    opens users_utils to javafx.fxml;
+    exports com.example.users_utils;
+    opens com.example.users_utils to javafx.fxml;
 }

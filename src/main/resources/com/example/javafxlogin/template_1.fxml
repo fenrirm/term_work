@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="458.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="456.0">
+         <children>
+            <RadioButton layoutX="23.0" layoutY="108.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="RadioButton" />
+            <RadioButton layoutX="120.0" layoutY="108.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="RadioButton" />
+            <RadioButton layoutX="217.0" layoutY="108.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="RadioButton" />
+            <RadioButton layoutX="314.0" layoutY="108.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="RadioButton" />
+            <TextField layoutX="23.0" layoutY="72.0" prefHeight="25.0" prefWidth="391.0" promptText="En" />
+            <CheckBox layoutX="35.0" layoutY="174.0" mnemonicParsing="false" text="CheckBox" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
