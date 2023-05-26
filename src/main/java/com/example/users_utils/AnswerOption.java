@@ -1,13 +1,14 @@
 package com.example.users_utils;
 
 public class AnswerOption {
-    private String answerText;
+    private String text;
 
-    public AnswerOption(String answerText){
-        this.answerText = answerText;
+    public AnswerOption(String text) {
+        this.text = text;
     }
 
-    public String getAnswerText() {
-        return answerText;
+    public String getText() {
+        return text;
     }
+
 }

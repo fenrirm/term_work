@@ -18,6 +18,6 @@ public class TestChoiceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         buttonCreateFromTemplates.setOnAction(event -> DBUtils.changeScene(event, "template_choice.fxml", "Template choice", 452, 283));
-        buttonCreateMyOwn.setOnAction(event -> DBUtils.changeScene(event,"own_test.fxml","My test", 650, 600));
+        buttonCreateMyOwn.setOnAction(event -> DBUtils.changeScene(event,"own_test.fxml", 700, 700));
     }
 }

@@ -30,27 +30,22 @@
                   <Font name="Consolas Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="createGroupsLabel" alignment="CENTER" layoutX="31.0" layoutY="333.0" prefHeight="28.0" prefWidth="227.0" text="- create groups" textFill="WHITE">
+            <Label fx:id="createCoursesLabel" alignment="CENTER" layoutX="30.0" layoutY="327.0" prefHeight="28.0" prefWidth="227.0" text="- create courses" textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="createCoursesLabel" alignment="CENTER" layoutX="31.0" layoutY="374.0" prefHeight="28.0" prefWidth="227.0" text="- create courses" textFill="WHITE">
+            <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="31.0" layoutY="399.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="31.0" layoutY="451.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
+            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="438.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="492.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
-               <font>
-                  <Font name="Consolas Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="passTestsLabel" alignment="CENTER" layoutX="31.0" layoutY="413.0" prefHeight="28.0" prefWidth="227.0" text="- pass tests " textFill="WHITE">
+            <Label fx:id="passTestsLabel" alignment="CENTER" layoutX="31.0" layoutY="364.0" prefHeight="28.0" prefWidth="227.0" text="- pass tests " textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="15.0" />
                </font>
@@ -66,7 +61,7 @@
                         <Font name="Consolas Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Label fx:id="phoneNumberLabel" layoutX="23.0" layoutY="147.0" prefHeight="28.0" prefWidth="143.0" text="Phone number: " textFill="WHITE">
+                  <Label fx:id="nicknameLabel" layoutX="23.0" layoutY="147.0" prefHeight="28.0" prefWidth="143.0" text="Nickname: " textFill="WHITE">
                      <font>
                         <Font name="Consolas Bold" size="15.0" />
                      </font></Label>
@@ -78,7 +73,7 @@
                      <font>
                         <Font name="Consolas Bold" size="15.0" />
                      </font></Button>
-                  <TextField fx:id="tf_phone_number" layoutX="181.0" layoutY="148.0" prefHeight="25.0" prefWidth="168.0" />
+                  <TextField fx:id="tf_nickname" layoutX="181.0" layoutY="148.0" prefHeight="25.0" prefWidth="168.0" />
                   <ImageView fitHeight="111.0" fitWidth="112.0" layoutX="130.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../image.png" />

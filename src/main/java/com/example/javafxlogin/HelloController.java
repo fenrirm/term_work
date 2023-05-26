@@ -16,15 +16,15 @@ public class HelloController implements Initializable {
     @FXML
     private Button button_log_in;
     @FXML
-    private TextField tf_phone_number;
+    private TextField tf_nickname;
     @FXML
     private TextField tf_password;
     @FXML
     private Button button_sign_up;
     @FXML
-    private Label createTestsLabel, createGroupsLabel, createCoursesLabel, passTestsLabel, getResultsLabel, getStatisticsLabel;
+    private Label createTestsLabel, passTestsLabel, getResultsLabel, getStatisticsLabel;
     @FXML
-    private Label phoneNumberLabel, passwordLabel;
+    private Label nicknameLabel, passwordLabel;
     @FXML
     private Label notAUserLabel;
     @FXML
@@ -36,10 +36,8 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        button_log_in.setOnAction(event -> DBUtils.logInUser(event, Integer.parseInt(tf_phone_number.getText()), tf_password.getText()));
+        button_log_in.setOnAction(event -> DBUtils.logInUser(event, tf_nickname.getText(), tf_password.getText()));
         button_sign_up.setOnAction(event -> DBUtils.changeScene(event, "sign-up.fxml", "sign up page"));
-        uaLanguageButton.setOnAction(event -> setLanguage(new Locale("ua")));
-        enLanguageButton.setOnAction(event -> setLanguage(new Locale("en")));
 
     }
 
@@ -47,12 +45,10 @@ public class HelloController implements Initializable {
     private void setLanguage(Locale locale) {
         bundle = ResourceBundle.getBundle("resources", locale);
         createTestsLabel.setText(bundle.getString("createTestsLabel"));
-        createGroupsLabel.setText(bundle.getString("createGroupsLabel"));
-        createCoursesLabel.setText(bundle.getString("createCoursesLabel"));
         passTestsLabel.setText(bundle.getString("passTestsLabel"));
         getResultsLabel.setText(bundle.getString("getResultsLabel"));
         getStatisticsLabel.setText(bundle.getString("getStatisticsLabel"));
-        phoneNumberLabel.setText(bundle.getString("phoneNumberLabel"));
+        nicknameLabel.setText(bundle.getString("phoneNumberLabel"));
         passwordLabel.setText(bundle.getString("passwordLabel"));
         notAUserLabel.setText(bundle.getString("notAUserLabel"));
         button_log_in.setText(bundle.getString("button_log_in"));

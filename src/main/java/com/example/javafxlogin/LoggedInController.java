@@ -35,7 +35,7 @@ public class LoggedInController implements Initializable {
     private Label positionLabel;
 
     @FXML
-    private Label phoneNumberLabel;
+    private Label nicknameLabel;
 
 
     @Override
@@ -56,7 +56,7 @@ public class LoggedInController implements Initializable {
             try{
                 Image image = new Image(new FileInputStream(selectedFile));
                 //addImageToTheDatabase(selectedFile.getAbsolutePath());
-                DatabaseHandler.addImage(selectedFile.getAbsolutePath(),phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
+                DatabaseHandler.addImage(selectedFile.getAbsolutePath(), nicknameLabel.getText().substring(nicknameLabel.getText().indexOf(':') + 1));
                 imageView.setImage(image);
             } catch (FileNotFoundException e) {
                 System.out.println("Error while downloading image: "+ e.getMessage());
@@ -100,10 +100,10 @@ public class LoggedInController implements Initializable {
 
     }*/
 
-    public void setUserInformation(String name, String surname, String position, int phoneNumber, String image){
+    public void setUserInformation(String name, String surname, String position, String nickname, String image){
         nameLabel.setText(nameLabel.getText()+" "+name+" "+surname);
         positionLabel.setText(positionLabel.getText()+" "+position);
-        phoneNumberLabel.setText(phoneNumberLabel.getText()+phoneNumber);
+        nicknameLabel.setText(nickname);
         try {
             imageView.setImage(new Image(image));
             imageView.toFront();

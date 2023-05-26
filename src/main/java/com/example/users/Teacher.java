@@ -1,12 +1,12 @@
 package com.example.users;
 
 public class Teacher extends User {
-    public Teacher(String name, String surname, int phoneNumber) {
-        super(name, surname, phoneNumber);
+    public Teacher(String name, String surname, String nickname) {
+        super(name, surname, nickname);
     }
 
     @Override
-    public int getPhoneNumber() {
-        return super.getPhoneNumber();
+    public String getNickname() {
+        return super.getNickname();
     }
 }

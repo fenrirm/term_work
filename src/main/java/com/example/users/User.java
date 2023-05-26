@@ -3,24 +3,24 @@ package com.example.users;
 public class User {
     private String name, surname;
     private String position;
-    private int phoneNumber;
+    private String nickname;
     private String password;
     private String imagePath;
 
 
-    public User(String name, String surname, String position, int phoneNumber, String password, String imagePath){
+    public User(String name, String surname, String position, String nickname, String password, String imagePath){
         this.name = name;
         this.surname = surname;
         this.position = position;
-        this.phoneNumber = phoneNumber;
+        this.nickname = nickname;
         this.password = password;
         this.imagePath = imagePath;
     }
 
-    public User(String name, String surname, int phoneNumber){
+    public User(String name, String surname, String nickname){
         this.name = name;
         this.surname = surname;
-        this.phoneNumber = phoneNumber;
+        this.nickname = nickname;
     }
 
     public String getName() {
@@ -31,8 +31,8 @@ public class User {
         return surname;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public String getNickname() {
+        return nickname;
     }
 
     public String getPassword() {

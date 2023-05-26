@@ -36,22 +36,17 @@
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
             </Label>
-            <Label fx:id="createCoursesLabel" alignment="CENTER" layoutX="25.0" layoutY="374.0" prefHeight="28.0" prefWidth="227.0" text="- create courses" textFill="WHITE">
+            <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="25.0" layoutY="409.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
                 <font>
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
             </Label>
-            <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="25.0" layoutY="453.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
+            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="447.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
                 <font>
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
             </Label>
-            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="494.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
-                <font>
-                    <Font name="Consolas Bold" size="15.0" />
-                </font>
-            </Label>
-            <Label fx:id="passTestsLabel" alignment="CENTER" layoutX="25.0" layoutY="412.0" prefHeight="28.0" prefWidth="227.0" text="- pass tests " textFill="WHITE">
+            <Label fx:id="passTestsLabel" alignment="CENTER" layoutX="25.0" layoutY="371.0" prefHeight="28.0" prefWidth="227.0" text="- pass tests " textFill="WHITE">
                <font>
                   <Font name="Consolas Bold" size="15.0" />
                </font>
@@ -71,7 +66,7 @@
                         <font>
                             <Font name="Consolas Bold" size="15.0" />
                         </font></Label>
-                    <Label fx:id="phoneNumberLabel" layoutX="14.0" layoutY="307.0" prefHeight="28.0" prefWidth="151.0" text="Phone number: " textFill="WHITE">
+                    <Label fx:id="nicknameLabel" layoutX="14.0" layoutY="307.0" prefHeight="28.0" prefWidth="151.0" text="Nickname:" textFill="WHITE">
                         <font>
                             <Font name="Consolas Bold" size="15.0" />
                         </font></Label>
@@ -85,7 +80,7 @@
                         </font></Button>
                     <TextField fx:id="tf_name" layoutX="181.0" layoutY="145.0" prefHeight="25.0" prefWidth="168.0" />
                     <TextField fx:id="tf_surname" layoutX="181.0" layoutY="197.0" prefHeight="25.0" prefWidth="168.0" />
-                    <TextField fx:id="tf_phone_number" layoutX="181.0" layoutY="309.0" prefHeight="25.0" prefWidth="168.0" />
+                    <TextField fx:id="tf_nickname" layoutX="181.0" layoutY="309.0" prefHeight="25.0" prefWidth="168.0" />
                     <Label fx:id="teacherOrStudentLabel" layoutX="14.0" layoutY="252.0" prefHeight="28.0" prefWidth="158.0" text="Teacher or student?" textFill="WHITE">
                         <font>
                             <Font name="Consolas Bold" size="15.0" />

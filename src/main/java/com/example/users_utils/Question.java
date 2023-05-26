@@ -1,36 +1,34 @@
 package com.example.users_utils;
 
-import java.util.List;
 
-public class Question {
+public abstract class Question {
     private String questionText;
-    private List<AnswerOption> answerOptions;
     private int weight;
-    private int correctAnswerIndex;
 
-    public Question(String question, List<AnswerOption> answerOptions, int weight){
-        this.questionText = question;
-        this.answerOptions = answerOptions;
+    private String imagePath = null;
+
+    public Question(String questionText, int weight) {
+        this.questionText = questionText;
         this.weight = weight;
+    }
+
+    public String getQuestionText() {
+        return questionText;
     }
 
     public int getWeight() {
         return weight;
     }
 
-    public void setCorrectAnswerIndex(int correctAnswerIndex) {
-        this.correctAnswerIndex = correctAnswerIndex;
+    public void setImage(String imagePath) {
+        this.imagePath = imagePath;
     }
 
-    public int getCorrectAnswerIndex() {
-        return correctAnswerIndex;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public List<AnswerOption> getAnswerOptions() {
-        return answerOptions;
-    }
+    public abstract String getType();
 
-    public String getQuestionText(){
-        return questionText;
-    }
+
 }

@@ -28,16 +28,16 @@ public class SignUpController implements Initializable {
     private TextField tf_password;
 
     @FXML
-    private TextField tf_phone_number;
+    private TextField tf_nickname;
 
     @FXML
     private TextField tf_surname;
 
     @FXML
-    private Label nameLabel, surnameLabel, teacherOrStudentLabel, phoneNumberLabel, passwordLabel, alreadyAMemberLabel;
+    private Label nameLabel, surnameLabel, teacherOrStudentLabel, nicknameLabel, passwordLabel, alreadyAMemberLabel;
 
     @FXML
-    private Label createTestsLabel, createGroupsLabel, createCoursesLabel, passTestsLabel, getResultsLabel, getStatisticsLabel;
+    private Label createTestsLabel,  createCoursesLabel, passTestsLabel, getResultsLabel, getStatisticsLabel;
 
     @FXML
     private Button uaLanguageButton, enLanguageButton;
@@ -56,13 +56,12 @@ public class SignUpController implements Initializable {
         button_sign_up.setOnAction(e -> {
             String toggleName = ((RadioButton) toggleGroup.getSelectedToggle()).getText();
             if (!tf_name.getText().trim().isEmpty() && !tf_surname.getText().trim().isEmpty() &&
-                    !tf_phone_number.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
-                if(!tf_phone_number.getText().matches("[0-9]+")){
+                    !tf_nickname.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
+                if(!tf_nickname.getText().matches("[0-9]+")){
                     DBUtils.showAlertMessage("PLease enter correct symbols in the line \"phone number\"");
                 }
-                //User user = new User(nameLabel.getText(), surnameLabel.getText(), toggleName, Integer.parseInt(phoneNumberLabel.getText()), passwordLabel.getText(), null);
                 DBUtils.signUpUser(e, tf_name.getText(), tf_surname.getText(),
-                        toggleName, Integer.parseInt(tf_phone_number.getText()), tf_password.getText());
+                        toggleName, tf_nickname.getText(), tf_password.getText());
             } else {
                 DBUtils.showAlertMessage("PLease fill in all information to sign up successfully!");
             }
@@ -72,20 +71,16 @@ public class SignUpController implements Initializable {
 
         button_log_in.setOnAction(event -> DBUtils.changeScene(event, "hello-view.fxml", "log in page"));
 
-        uaLanguageButton.setOnAction(event -> setLanguage(new Locale("ua")));
-        enLanguageButton.setOnAction(event -> setLanguage(new Locale("en")) );
-
 
     }
     private void setLanguage(Locale locale) {
         bundle = ResourceBundle.getBundle("resources", locale);
         createTestsLabel.setText(bundle.getString("createTestsLabel"));
-        createGroupsLabel.setText(bundle.getString("createGroupsLabel"));
         createCoursesLabel.setText(bundle.getString("createCoursesLabel"));
         passTestsLabel.setText(bundle.getString("passTestsLabel"));
         getResultsLabel.setText(bundle.getString("getResultsLabel"));
         getStatisticsLabel.setText(bundle.getString("getStatisticsLabel"));
-        phoneNumberLabel.setText(bundle.getString("phoneNumberLabel"));
+        nicknameLabel.setText(bundle.getString("phoneNumberLabel"));
         passwordLabel.setText(bundle.getString("passwordLabel"));
         alreadyAMemberLabel.setText(bundle.getString("alreadyAMemberLabel"));
         nameLabel.setText(bundle.getString("nameLabel"));

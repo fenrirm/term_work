@@ -42,6 +42,29 @@ public class DBUtils {
         }
 
     }
+    public static void changeScene(ActionEvent event, String fxmlFile, double width, double height) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(DBUtils.class.getResource(fxmlFile)));
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root, width, height));
+
+            double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+            double screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+            double windowX = (screenWidth - width) / 2;
+            double windowY = (screenHeight - height) / 2;
+            newStage.setX(windowX);
+            newStage.setY(windowY);
+            newStage.show();
+
+            // Optionally, you can close the previous stage if needed
+            // currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void changeScene(ActionEvent event, String fxmlFile, String title) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(DBUtils.class.getResource(fxmlFile)));
@@ -61,7 +84,7 @@ public class DBUtils {
             Parent root = loader.load();
             LoggedInController loggedInController = loader.getController();
             if (user != null) {
-                loggedInController.setUserInformation(user.getName(), user.getSurname(), user.getPosition(), user.getPhoneNumber(), user.getImagePath());
+                loggedInController.setUserInformation(user.getName(), user.getSurname(), user.getPosition(), user.getNickname(), user.getImagePath());
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle(title);
@@ -75,11 +98,11 @@ public class DBUtils {
 
 
     public static void signUpUser(ActionEvent event, String name, String surname,
-                                  String position, int phoneNumber, String password) {
+                                  String position, String nickname, String password) {
 
-        User user = new User(name, surname, position, phoneNumber, password, null);
+        User user = new User(name, surname, position, nickname, password, null);
         try {
-            if (DatabaseHandler.userExists(phoneNumber)) {
+            if (DatabaseHandler.userExists(nickname)) {
                 showAlertMessage("User with this number is already exists");
             } else {
                 DatabaseHandler.insertUser(user);
@@ -92,9 +115,9 @@ public class DBUtils {
         }
 
     }
-    public static void logInUser(ActionEvent event, int phoneNumber, String password) {
+    public static void logInUser(ActionEvent event, String nickname, String password) {
         try {
-            User user = DatabaseHandler.getUser(phoneNumber, password);
+            User user = DatabaseHandler.getUser(nickname, password);
             if (user == null) {
                 showAlertMessage("User was not found! Check provided credentials.");
             }else {
