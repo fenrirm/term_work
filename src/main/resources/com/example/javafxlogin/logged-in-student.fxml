@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="1427.0" prefWidth="672.0" style="-fx-background-color: #b7f9ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.LoggedInStudentController">
+<AnchorPane fx:id="anchorPane" prefHeight="474.0" prefWidth="742.0" style="-fx-background-color: #b7f9ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.LoggedInStudentController">
     <children>
-        <Button fx:id="button_log_out" layoutX="545.0" layoutY="410.0" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Log out" textFill="WHITE">
+        <Button fx:id="button_log_out" layoutX="640.0" layoutY="424.0" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Log out" textFill="WHITE">
             <font>
                 <Font name="Consolas Bold" size="15.0" />
             </font></Button>
@@ -37,104 +37,105 @@
                         <Font name="Consolas Bold" size="12.0" />
                     </font>
                 </Label>
-                <Label fx:id="nicknameLabel" prefHeight="40.0" prefWidth="157.0" text="Phone number:">
+                <Label fx:id="nicknameLabel" prefHeight="40.0" prefWidth="157.0">
                     <font>
                         <Font name="Consolas Bold" size="12.0" />
                     </font>
                 </Label>
             </children></VBox>
-      <Button layoutX="411.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000;" />
-      <Button layoutX="467.0" layoutY="411.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-background-color: #000000;" />
-      <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="419.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../ukraine.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="19.0" fitWidth="23.0" layoutX="475.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../american.png" />
-         </image>
-      </ImageView>
-      <AnchorPane fx:id="anchorPane2" layoutX="193.0" layoutY="14.0" prefHeight="385.0" prefWidth="455.0">
+      <AnchorPane fx:id="anchorPane2" layoutX="157.0" layoutY="16.0" prefHeight="325.0" prefWidth="578.0">
          <children>
-            <Label fx:id="controlLabel" layoutX="7.0" layoutY="14.0" prefHeight="23.0" prefWidth="90.0" text="My tests">
-               <font>
-                  <Font name="Consolas Bold" size="12.0" />
-               </font>
-            </Label>
-            <StackPane fx:id="studentStackPane" layoutX="6.0" layoutY="42.0" prefHeight="339.0" prefWidth="425.0">
+            <StackPane fx:id="studentStackPane" layoutX="4.0" layoutY="21.0" prefHeight="283.0" prefWidth="559.0">
                <children>
+                  <Pane fx:id="overviewPane" prefHeight="287.0" prefWidth="567.0" style="-fx-background-color: #496366;">
+                     <children>
+                        <ListView fx:id="activeTestOverviewListView" layoutX="7.0" layoutY="25.0" prefHeight="242.0" prefWidth="166.0" />
+                        <ListView fx:id="passedTestOverviewListView" layoutX="180.0" layoutY="25.0" prefHeight="242.0" prefWidth="166.0" />
+                        <ListView fx:id="courseOverviewListView" layoutX="353.0" layoutY="25.0" prefHeight="242.0" prefWidth="193.0" />
+                        <Label layoutX="7.0" layoutY="6.0" prefHeight="17.0" prefWidth="166.0" text="Active tests" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="180.0" layoutY="6.0" prefHeight="17.0" prefWidth="166.0" text="Passed tests" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="353.0" layoutY="6.0" prefHeight="17.0" prefWidth="193.0" text="Courses" textFill="#f4f4f4">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                   <Pane fx:id="coursePane" prefHeight="307.0" prefWidth="420.0" style="-fx-background-color: #496366;" visible="false">
                      <children>
-                        <ListView fx:id="courseListView" layoutX="7.0" layoutY="13.0" prefHeight="242.0" prefWidth="408.0" style="-fx-background-color: #496366;" />
-                        <Label fx:id="courseLabel" layoutX="18.0" layoutY="19.0" prefHeight="29.0" prefWidth="385.0" text="Course">
-                           <font>
-                              <Font name="Consolas Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="unenrollFromCourseButton" layoutX="255.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #000000;" text="Unenroll from course" textFill="WHITE">
+                        <ListView fx:id="courseListView" layoutX="7.0" layoutY="13.0" prefHeight="235.0" prefWidth="225.0" />
+                        <Button fx:id="leaveCourseButton" layoutX="244.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Leave course" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="enrollToCourseButton" layoutX="18.0" layoutY="268.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #000000;" text="Enroll to course" textFill="WHITE">
+                        <Button fx:id="joinToCourseButton" layoutX="244.0" layoutY="73.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Join to course" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
                      </children>
                   </Pane>
-                  <Pane fx:id="teacherPane" prefHeight="307.0" prefWidth="420.0" style="-fx-background-color: #496366;" visible="false">
+                  <Pane fx:id="testPane" prefHeight="189.0" prefWidth="202.0" style="-fx-background-color: #496366;" visible="false">
                      <children>
-                        <ListView fx:id="teacherListView" layoutX="7.0" layoutY="11.0" prefHeight="292.0" prefWidth="408.0" style="-fx-background-color: #496366;" />
-                        <Label fx:id="teacherLabel" layoutX="18.0" layoutY="19.0" prefHeight="29.0" prefWidth="385.0" text="Teacher">
-                           <font>
-                              <Font name="Consolas Bold" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="testPane" prefHeight="339.0" prefWidth="411.0" style="-fx-background-color: #496366;">
-                     <children>
-                        <Button fx:id="passTestButton" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Pass test" textFill="WHITE">
+                        <Button fx:id="passTestButton" layoutX="67.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Pass test" textFill="WHITE">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font>
                         </Button>
-                        <ListView fx:id="testListView" layoutX="14.0" layoutY="13.0" prefHeight="242.0" prefWidth="396.0" style="-fx-background-color: #496366;" />
-                        <Label fx:id="testLabel" layoutX="18.0" layoutY="19.0" prefHeight="29.0" prefWidth="385.0" text="Test">
+                        <ListView fx:id="activeTestListView" layoutX="14.0" layoutY="29.0" prefHeight="196.0" prefWidth="225.0" />
+                        <ListView fx:id="passedTestListView" layoutX="288.0" layoutY="29.0" prefHeight="196.0" prefWidth="225.0" />
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="225.0" text="Active tests" textFill="WHITE">
                            <font>
                               <Font name="Consolas Bold" size="12.0" />
                            </font>
                         </Label>
+                        <Label layoutX="288.0" layoutY="14.0" prefHeight="17.0" prefWidth="225.0" text="Passed tests" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="showTestButton" layoutX="341.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Show test" textFill="WHITE">
+                           <font>
+                              <Font name="Consolas Bold" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </children></StackPane>
          </children>
       </AnchorPane>
-      <VBox layoutX="33.0" layoutY="324.0" prefHeight="115.0" prefWidth="91.0" spacing="15.0">
+          <Button fx:id="uploadButton" layoutX="44.0" layoutY="166.0" mnemonicParsing="false" onAction="#uploadPhoto" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload" textFill="WHITE">
+              <font>
+                  <Font name="Consolas Bold" size="12.0" />
+              </font>
+      </Button>
+      <Pane layoutX="323.0" layoutY="339.0" prefHeight="47.0" prefWidth="246.0">
          <children>
-            <Button fx:id="myTestsButton" mnemonicParsing="false" onAction="#handleMyTestsButton" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My tests" textFill="WHITE">
+            <Button fx:id="myTestsButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleMyTestsButton" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My tests" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="myTeachersButton" mnemonicParsing="false" onAction="#handleMyTeachersButton" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My teachers" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="MyCoursesButton" mnemonicParsing="false" onAction="#handleMyCoursesButton" prefHeight="19.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My courses" textFill="WHITE">
+            <Button fx:id="MyCoursesButton" layoutX="126.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleMyCoursesButton" prefHeight="19.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="My courses" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
          </children>
-      </VBox>
-          <Button fx:id="uploadButton" layoutX="44.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload" textFill="WHITE">
-              <font>
-                  <Font name="Consolas Bold" size="12.0" />
-              </font>
+      </Pane>
+      <Button fx:id="overviewButton" layoutX="18.0" layoutY="326.0" mnemonicParsing="false" onAction="#handleOverviewButton" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Overview" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
       </Button>
     </children>
 </AnchorPane>

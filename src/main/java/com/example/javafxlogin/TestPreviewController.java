@@ -12,12 +12,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class TestViewController implements Initializable {
+public class TestPreviewController implements Initializable {
+
 
     @FXML
     private ScrollPane scrollPaneTestPreview;
@@ -86,28 +88,38 @@ public class TestViewController implements Initializable {
     private double imageViewWordQuestionLayoutX = 550.0;
     private double imageViewWordQuestionLayoutY = 10.0;
 
-    private Test myTest;
+    private Test test;
 
-    private List<Question> testQuestions;
+    private List<Question> questions;
 
-    public void setTest(Test test){
-        this.myTest = test;
-    }
-
-    public void setQuestions(List<Question> questions){
-        this.testQuestions = questions;
-    }
-
-    /*public void previewTest(){
-        List<Question> questions = this.testQuestions;
-        for (Question question : questions) {
-            setPreviewTestWindow(question.getType(), question);
+    public void updatePreviewTest() {
+        if (test != null) {
+            List<Question> questions = test.getQuestions();
+            for (Question question : questions) {
+                setPreviewTestWindow(question.getType(), question);
+            }
         }
+    }
+
+
+    public void setTest(Test test) {
+        this.test = test;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public void initializeController(){
+        Test newTest = this.test;
+        newTest.setQuestions(this.questions);
+        previewTest(newTest);
 
     }
-    */
-    public void initializeController(){
-        List<Question> questions = this.testQuestions;
+
+
+    public void previewTest(Test test){
+        List<Question> questions = test.getQuestions();
         for (Question question : questions) {
             setPreviewTestWindow(question.getType(), question);
         }
@@ -240,7 +252,6 @@ public class TestViewController implements Initializable {
         singleChoicePane.setStyle("-fx-background-color: #496366;");
         paneLayoutY = paneLayoutY +SINGLE_CHOICE_PANE_HEIGHT;
     }
-
     public void setMultipleChoicePaneStyle(Pane multipleChoicePane){
         multipleChoicePane.setLayoutX(paneLayoutX);
         multipleChoicePane.setLayoutY(paneLayoutY);
@@ -248,7 +259,6 @@ public class TestViewController implements Initializable {
         multipleChoicePane.setStyle("-fx-background-color: #496366;");
         paneLayoutY = paneLayoutY + MULTIPLE_CHOICE_PANE_HEIGHT;
     }
-
     public void setWordPaneStyle(Pane wordPane){
         wordPane.setLayoutX(paneLayoutX);
         wordPane.setLayoutY(paneLayoutY);
@@ -256,6 +266,7 @@ public class TestViewController implements Initializable {
         wordPane.setStyle("-fx-background-color: #496366;");
         paneLayoutY = paneLayoutY + WORD_PANE_HEIGHT;
     }
+
     public void setQuestionLabelStyle(Label question){
         question.setLayoutX(questionLabelLayoutX);
         question.setLayoutY(questionLabelLayoutY);
@@ -263,6 +274,7 @@ public class TestViewController implements Initializable {
         question.setPrefHeight(QUESTION_LABEL_HEIGHT);
         question.setStyle("-fx-text-fill:WHITE; -fx-font-size: 12; -fx-font-family: 'Consolas Bold'; -fx-font-weight: bold;");
     }
+
     public void setRadioButtonsStyle(RadioButton radioButton1, RadioButton radioButton2, RadioButton radioButton3, RadioButton radioButton4){
         radioButton1.setLayoutX(radioButtonLayoutX);
         radioButton1.setLayoutY(radioButtonLayoutY);
@@ -350,7 +362,6 @@ public class TestViewController implements Initializable {
         label.setPrefHeight(WORD_PANE_ANSWER_LABEL_HEIGHT);
         label.setStyle("-fx-text-fill:WHITE; -fx-font-size: 12; -fx-font-family: 'Consolas Bold';");
     }
-
     private void setWordQuestionWeightLabelStyle(Label label) {
         label.setLayoutX(wordQuestionWeightLabelLayoutX);
         label.setLayoutY(wordQuestionWeightLabelLayoutY);
@@ -359,7 +370,6 @@ public class TestViewController implements Initializable {
         label.setStyle("-fx-text-fill:WHITE; -fx-font-size: 12; -fx-font-family: 'Consolas Bold';");
 
     }
-
     public void setSingleChoiceQuestionImageViewStyle(ImageView imageView){
         imageView.setLayoutX(imageViewSingleChoiceQuestionLayoutX);
         imageView.setLayoutY(imageViewSingleChoiceQuestionLayoutY);
@@ -372,16 +382,17 @@ public class TestViewController implements Initializable {
         imageView.setFitWidth(IMAGE_VIEW_WIDTH);
         imageView.setFitHeight(IMAGE_VIEW_HEIGHT);
     }
+
     public void setWordQuestionImageViewStyle(ImageView imageView){
         imageView.setLayoutX(imageViewWordQuestionLayoutX);
         imageView.setLayoutY(imageViewWordQuestionLayoutY);
         imageView.setFitWidth(IMAGE_VIEW_WIDTH);
         imageView.setFitHeight(IMAGE_VIEW_HEIGHT);
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        testPreviewVBox.getChildren().clear(); // Clear existing preview elements
 
     }
-
 }

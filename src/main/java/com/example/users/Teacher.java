@@ -9,4 +9,14 @@ public class Teacher extends User {
     public String getNickname() {
         return super.getNickname();
     }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public String getSurname() {
+        return super.getSurname();
+    }
 }

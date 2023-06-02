@@ -55,8 +55,7 @@ public class LoggedInController implements Initializable {
         if(selectedFile != null){
             try{
                 Image image = new Image(new FileInputStream(selectedFile));
-                //addImageToTheDatabase(selectedFile.getAbsolutePath());
-                DatabaseHandler.addImage(selectedFile.getAbsolutePath(), nicknameLabel.getText().substring(nicknameLabel.getText().indexOf(':') + 1));
+                DatabaseHandler.addImage(selectedFile.getAbsolutePath().trim(), nicknameLabel.getText().trim());
                 imageView.setImage(image);
             } catch (FileNotFoundException e) {
                 System.out.println("Error while downloading image: "+ e.getMessage());
@@ -68,37 +67,6 @@ public class LoggedInController implements Initializable {
 
     }
 
-    /*private void addImageToTheDatabase(String imagePath)  {
-        Connection connection = null;
-        PreparedStatement psUpdate = null;
-        try{
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/javafx", "fenrirm", "fenrirm");
-            psUpdate = connection.prepareStatement("UPDATE user SET image = ? WHERE phoneNumber = ?");
-            psUpdate.setString(1, imagePath);
-            psUpdate.setString(2, phoneNumberLabel.getText().substring(phoneNumberLabel.getText().indexOf(':') + 1));
-            psUpdate.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            if (psUpdate != null) {
-                try {
-                    psUpdate.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-    }*/
 
     public void setUserInformation(String name, String surname, String position, String nickname, String image){
         nameLabel.setText(nameLabel.getText()+" "+name+" "+surname);

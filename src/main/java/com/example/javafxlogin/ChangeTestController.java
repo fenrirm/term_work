@@ -1,15 +1,11 @@
 package com.example.javafxlogin;
 
-import com.example.database_utils.DatabaseHandler;
 import com.example.users_utils.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -24,116 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MyTestController implements Initializable {
-
-    @FXML
-    StackPane stackPane;
-
-    @FXML
-    private Pane finishedPane;
-
-    @FXML
-    private Pane constructorPane;
-
-    @FXML
-    private StackPane questionTypeConstructorStackPane;
-
-    @FXML
-    private Pane singleChoicePane;
-
-    @FXML
-    private Pane multipleChoicePane;
-
-    @FXML
-    private Pane wordPane;
-
-    @FXML
-    private StackPane finishedImageViewStackPane;
-
-    @FXML
-    private Pane finishedMultipleChoiceQuestionImagePane;
-
-    @FXML
-    private ImageView finishedMultipleChoiceQuestionImageView;
-
-    @FXML
-    private Pane finishedSingleChoiceQuestionImagePane;
-
-    @FXML
-    private ImageView finishedSingleChoiceQuestionImageView;
-
-    @FXML
-    private Pane finishedWordQuestionImagePane;
-
-    @FXML
-    private Pane multipleChoiceQuestionImagePane;
-
-    @FXML
-    private ImageView multipleChoiceQuestionImageView;
-
-    @FXML
-    private Button multipleChoiceQuestionUploadImageButton;
-
-    @FXML
-    private Pane singleChoiceQuestionImagePane;
-
-    @FXML
-    private ImageView singleChoiceQuestionImageView;
-
-    @FXML
-    private Button singleChoiceQuestionUploadImageButton;
-
-    @FXML
-    private Pane wordQuestionImagePane;
-
-    @FXML
-    private ImageView wordQuestionImageView;
-
-    @FXML
-    private Button wordQuestionUploadImageButton;
-
-    @FXML
-    private ImageView finishedWordQuestionImageView;
-
-    @FXML
-    private StackPane imageViewStackPane;
-
-
-    @FXML
-    private ImageView imageView;
-
-    @FXML
-    private ImageView finishedImage;
-
-    @FXML
-    private Button buttonUploadMedia;
-
-    @FXML
-    private StackPane finishedAnswerTypeStackPane;
-
-    @FXML
-    private Pane finishedWordPane;
-
-    @FXML
-    private Pane finishedMultipleChoicePane;
-
-    @FXML
-    private Pane finishedSingleChoicePane;
-
-    @FXML
-    private TextField fieldQuestionText;
-
-    @FXML
-    private ChoiceBox<String> choiceBoxQuestionType;
-
-    @FXML
-    private ChoiceBox<Integer> choiceBoxWeight;
+public class ChangeTestController implements Initializable  {
 
     @FXML
     private ToggleGroup answers;
-
-    @FXML
-    private ToggleGroup finishedAnswers;
 
     @FXML
     private Button buttonAddQuestion;
@@ -148,55 +38,10 @@ public class MyTestController implements Initializable {
     private Button buttonDone;
 
     @FXML
-    private Button buttonSaveTest;
-
-    @FXML
     private Button buttonPreviewTest;
 
     @FXML
-    private Label labelQuestion;
-
-    @FXML
-    private Label labelWeight;
-
-    @FXML
-    private Label labelWordAnswer;
-
-    @FXML
-    private Label wordFinishedAnswer;
-
-    @FXML
-    private TextField tfWordAnswer;
-
-    @FXML
-    private Label labelQuestionText;
-
-    @FXML
-    private TextField fieldAnswer1;
-
-    @FXML
-    private TextField fieldAnswer2;
-
-    @FXML
-    private TextField fieldAnswer3;
-
-    @FXML
-    private TextField fieldAnswer4;
-
-    @FXML
-    private TextField fieldMultipleAnswer1;
-
-    @FXML
-    private TextField fieldMultipleAnswer2;
-
-    @FXML
-    private TextField fieldMultipleAnswer3;
-
-    @FXML
-    private TextField fieldMultipleAnswer4;
-
-    @FXML
-    private TextField fieldMultipleAnswer5;
+    private Button buttonSaveTest;
 
     @FXML
     private CheckBox checkBoxAnswer1;
@@ -229,6 +74,114 @@ public class MyTestController implements Initializable {
     private CheckBox checkBoxFinishedAnswer5;
 
     @FXML
+    private ChoiceBox<String> choiceBoxQuestionType;
+
+    @FXML
+    private ChoiceBox<Integer> choiceBoxWeight;
+
+    @FXML
+    private Pane constructorPane;
+
+    @FXML
+    private TextField fieldAnswer1;
+
+    @FXML
+    private TextField fieldAnswer2;
+
+    @FXML
+    private TextField fieldAnswer3;
+
+    @FXML
+    private TextField fieldAnswer4;
+
+    @FXML
+    private TextField fieldMultipleAnswer1;
+
+    @FXML
+    private TextField fieldMultipleAnswer2;
+
+    @FXML
+    private TextField fieldMultipleAnswer3;
+
+    @FXML
+    private TextField fieldMultipleAnswer4;
+
+    @FXML
+    private TextField fieldMultipleAnswer5;
+
+    @FXML
+    private TextField fieldQuestionText;
+
+    @FXML
+    private StackPane finishedAnswerTypeStackPane;
+
+    @FXML
+    private ToggleGroup finishedAnswers;
+
+    @FXML
+    private StackPane finishedImageViewStackPane;
+
+    @FXML
+    private Pane finishedMultipleChoicePane;
+
+    @FXML
+    private Pane finishedMultipleChoiceQuestionImagePane;
+
+    @FXML
+    private ImageView finishedMultipleChoiceQuestionImageView;
+
+    @FXML
+    private Pane finishedPane;
+
+    @FXML
+    private Pane finishedSingleChoicePane;
+
+    @FXML
+    private Pane finishedSingleChoiceQuestionImagePane;
+
+    @FXML
+    private ImageView finishedSingleChoiceQuestionImageView;
+
+    @FXML
+    private Pane finishedWordPane;
+
+    @FXML
+    private Pane finishedWordQuestionImagePane;
+
+    @FXML
+    private ImageView finishedWordQuestionImageView;
+
+    @FXML
+    private StackPane imageViewStackPane;
+
+    @FXML
+    private Label labelQuestionText;
+
+    @FXML
+    private Label labelWeight;
+
+    @FXML
+    private Label labelWordAnswer;
+
+    @FXML
+    private ListView<Label> listOfQuestions;
+
+    @FXML
+    private Pane multipleChoicePane;
+
+    @FXML
+    private Pane multipleChoiceQuestionImagePane;
+
+    @FXML
+    private ImageView multipleChoiceQuestionImageView;
+
+    @FXML
+    private Button multipleChoiceQuestionUploadImageButton;
+
+    @FXML
+    private StackPane questionTypeConstructorStackPane;
+
+    @FXML
     private RadioButton rbAnswer1;
 
     @FXML
@@ -253,11 +206,48 @@ public class MyTestController implements Initializable {
     private RadioButton rbFinishedAnswer4;
 
     @FXML
-    private ListView<Label> listOfQuestions;
+    private Pane singleChoicePane;
 
-    private Test myTest = new Test();
+    @FXML
+    private Pane singleChoiceQuestionImagePane;
 
-    private int questionIndex = 0;
+    @FXML
+    private ImageView singleChoiceQuestionImageView;
+
+    @FXML
+    private Button singleChoiceQuestionUploadImageButton;
+
+    @FXML
+    private StackPane stackPane;
+
+    @FXML
+    private TextField tfWordAnswer;
+
+    @FXML
+    private Label wordFinishedAnswer;
+
+    @FXML
+    private Pane wordPane;
+
+    @FXML
+    private Pane wordQuestionImagePane;
+
+    @FXML
+    private ImageView wordQuestionImageView;
+
+    @FXML
+    private Button wordQuestionUploadImageButton;
+
+    @FXML
+    private Label testNameLabel;
+
+    @FXML
+    private Label testDeadlineLabel;
+
+    private static Test myTest = new Test();
+
+    List<Question> questions = new ArrayList<>();
+    private Label questionLabel;
     File selectedFile;
     private Image image;
     private boolean isQuestionFinished = true;
@@ -268,18 +258,32 @@ public class MyTestController implements Initializable {
 
     private String authorNickname;
 
+    private int questionIndex;
 
-    public void setAuthorNickname(String authorNickname){
-        this.authorNickname = authorNickname;
+    private boolean init = true;
+
+
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+        this.questionIndex = questions.size()-1;
     }
+
+    public void setTest(Test test) {
+        this.myTest = test;
+    }
+
 
     public void handleDoneButtonAction() {
 
         List<AnswerOption> answerOptions = new ArrayList<>();
 
         String selectedQuestionType = choiceBoxQuestionType.getValue();
+        System.out.println(selectedQuestionType);
 
         int selectedRadioButtonIndex = answers.getToggles().indexOf(answers.getSelectedToggle());
+
+        System.out.println(isQuestionChanging);
 
 
         switch (selectedQuestionType) {
@@ -294,27 +298,20 @@ public class MyTestController implements Initializable {
                     return;
                 }
 
-                answerOptions.add(new AnswerOption(fieldAnswer1.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldAnswer2.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldAnswer3.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldAnswer4.getText().trim()));
-                SingleChoiceQuestion newQuestion = new SingleChoiceQuestion(fieldQuestionText.getText().trim(), answerOptions, choiceBoxWeight.getValue());
+                answerOptions.add(new AnswerOption(fieldAnswer1.getText()));
+                answerOptions.add(new AnswerOption(fieldAnswer2.getText()));
+                answerOptions.add(new AnswerOption(fieldAnswer3.getText()));
+                answerOptions.add(new AnswerOption(fieldAnswer4.getText()));
+                SingleChoiceQuestion newQuestion = new SingleChoiceQuestion(fieldQuestionText.getText(), answerOptions, choiceBoxWeight.getValue());
                 newQuestion.setCorrectAnswerIndex(selectedRadioButtonIndex);
 
                 if(selectedFile!=null) {
-                    newQuestion.setImage(selectedFile.getAbsolutePath().trim());
+                    newQuestion.setImage(selectedFile.getAbsolutePath());
                 }
 
                 if(isQuestionChanging){
                     int selectedIndex = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    if(selectedFile==null) {
-                        newQuestion.setImage(myTest.getQuestions().get(selectedIndex).getImagePath());
-                    }
-                    switch (myTest.getQuestions().get(selectedIndex).getType()){
-                        case "Single choice question" -> clearSingleChoicePane();
-                        case "Multiple choice question" -> clearMultipleChoicePane();
-                        case "Word question" -> clearWordPane();
-                    }
+                    System.out.println(selectedIndex);
                     myTest.addQuestion(selectedIndex, newQuestion);
                     displayQuestionDetails(selectedIndex);
                     isQuestionChanging = false;
@@ -323,7 +320,6 @@ public class MyTestController implements Initializable {
                     myTest.addQuestion(newQuestion);
                     displayQuestionDetails(questionIndex);
                 }
-                clearSingleChoicePane();
 
             }
             case "Multiple choice question" -> {
@@ -338,11 +334,11 @@ public class MyTestController implements Initializable {
                     return;
                 }
 
-                answerOptions.add(new AnswerOption(fieldMultipleAnswer1.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldMultipleAnswer2.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldMultipleAnswer3.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldMultipleAnswer4.getText().trim()));
-                answerOptions.add(new AnswerOption(fieldMultipleAnswer5.getText().trim()));
+                answerOptions.add(new AnswerOption(fieldMultipleAnswer1.getText()));
+                answerOptions.add(new AnswerOption(fieldMultipleAnswer2.getText()));
+                answerOptions.add(new AnswerOption(fieldMultipleAnswer3.getText()));
+                answerOptions.add(new AnswerOption(fieldMultipleAnswer4.getText()));
+                answerOptions.add(new AnswerOption(fieldMultipleAnswer5.getText()));
 
                 List<Integer> correctAnswerIndices = new ArrayList<>();
                 if (checkBoxAnswer1.isSelected()) {
@@ -361,22 +357,14 @@ public class MyTestController implements Initializable {
                     correctAnswerIndices.add(4);
                 }
 
-                MultipleChoiceQuestion newQuestion = new MultipleChoiceQuestion(fieldQuestionText.getText().trim(), answerOptions, choiceBoxWeight.getValue());
+                MultipleChoiceQuestion newQuestion = new MultipleChoiceQuestion(fieldQuestionText.getText(), answerOptions, choiceBoxWeight.getValue());
                 newQuestion.addCorrectAnswerIndex(correctAnswerIndices);
                 if(selectedFile!=null) {
-                    newQuestion.setImage(selectedFile.getAbsolutePath().trim());
+                    newQuestion.setImage(selectedFile.getAbsolutePath());
                 }
 
                 if(isQuestionChanging){
                     int selectedIndex = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    if(selectedFile==null) {
-                        newQuestion.setImage(myTest.getQuestions().get(selectedIndex).getImagePath());
-                    }
-                    switch (myTest.getQuestions().get(selectedIndex).getType()){
-                        case "Single choice question" -> clearSingleChoicePane();
-                        case "Multiple choice question" -> clearMultipleChoicePane();
-                        case "Word question" -> clearWordPane();
-                    }
                     myTest.addQuestion(selectedIndex, newQuestion);
                     displayQuestionDetails(selectedIndex);
                     isQuestionChanging = false;
@@ -384,7 +372,6 @@ public class MyTestController implements Initializable {
                     myTest.addQuestion(newQuestion);
                     displayQuestionDetails(questionIndex);
                 }
-                clearMultipleChoicePane();
 
             }
             case "Word question" -> {
@@ -393,22 +380,14 @@ public class MyTestController implements Initializable {
                     return;
                 }
 
-                String correctAnswer = tfWordAnswer.getText().trim().toLowerCase();
-                WordQuestion newQuestion = new WordQuestion(fieldQuestionText.getText().trim(), correctAnswer, choiceBoxWeight.getValue());
+                String correctAnswer = tfWordAnswer.getText();
+                WordQuestion newQuestion = new WordQuestion(fieldQuestionText.getText(), correctAnswer, choiceBoxWeight.getValue());
                 if(selectedFile!=null) {
-                    newQuestion.setImage(selectedFile.getAbsolutePath().trim());
+                    newQuestion.setImage(selectedFile.getAbsolutePath());
                 }
 
                 if(isQuestionChanging){
                     int selectedIndex = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    if(selectedFile==null) {
-                        newQuestion.setImage(myTest.getQuestions().get(selectedIndex).getImagePath());
-                    }
-                    switch (myTest.getQuestions().get(selectedIndex).getType()){
-                        case "Single choice question" -> clearSingleChoicePane();
-                        case "Multiple choice question" -> clearMultipleChoicePane();
-                        case "Word question" -> clearWordPane();
-                    }
                     myTest.addQuestion(selectedIndex, newQuestion);
                     displayQuestionDetails(selectedIndex);
                     isQuestionChanging = false;
@@ -417,7 +396,6 @@ public class MyTestController implements Initializable {
                     myTest.addQuestion(newQuestion);
                     displayQuestionDetails(questionIndex);
                 }
-                clearWordPane();
 
             }
             default -> {
@@ -427,19 +405,19 @@ public class MyTestController implements Initializable {
 
 
         }
+
+
+
+
         System.out.println("Added successfully");
-
-
 
         constructorPane.setVisible(false);
         finishedPane.setVisible(true);
         constructorPane.toBack();
         finishedPane.toFront();
 
-
         isQuestionFinished = true;
         selectedFile = null;
-
 
 
 
@@ -447,33 +425,21 @@ public class MyTestController implements Initializable {
 
 
     private void displayQuestionDetails(int index) {
-
-        List<Question> questions = myTest.getQuestions();
-        if (questions.isEmpty()) {
-            System.out.println("Your list of questions is empty!");
-            return;
-        }
-
         if (index < 0 || index >= questions.size()) {
             System.out.println("Invalid question index!");
             return;
         }
 
         Question question = questions.get(index);
-        labelQuestionText.setText((index + 1) + "." + question.getQuestionText());
+        labelQuestionText.setText((index + 1) + ". " + question.getQuestionText());
 
-        switch (question.getType()){
-            case "Single choice question" ->{
+        switch (question.getType()) {
+            case "Single choice question" -> {
                 SingleChoiceQuestion singleChoiceQuestion = (SingleChoiceQuestion) question;
                 rbFinishedAnswer1.setText(singleChoiceQuestion.getAnswerOptions().get(0).getText());
                 rbFinishedAnswer2.setText(singleChoiceQuestion.getAnswerOptions().get(1).getText());
                 rbFinishedAnswer3.setText(singleChoiceQuestion.getAnswerOptions().get(2).getText());
                 rbFinishedAnswer4.setText(singleChoiceQuestion.getAnswerOptions().get(3).getText());
-                rbFinishedAnswer1.setDisable(true);
-                rbFinishedAnswer2.setDisable(true);
-                rbFinishedAnswer3.setDisable(true);
-                rbFinishedAnswer4.setDisable(true);
-
                 int correctAnswerIndex = singleChoiceQuestion.getCorrectAnswerIndex();
                 RadioButton selectedRadioButton = switch (correctAnswerIndex) {
                     case 0 -> rbFinishedAnswer1;
@@ -485,44 +451,42 @@ public class MyTestController implements Initializable {
                 if (selectedRadioButton != null) {
                     selectedRadioButton.setSelected(true);
                 }
+                if (question.getImagePath() != null) {
+                    Image image = new Image(question.getImagePath());
+                    finishedSingleChoiceQuestionImageView.setImage(image);
+
+                }
                 finishedSingleChoicePane.setVisible(true);
                 finishedMultipleChoicePane.setVisible(false);
                 finishedWordPane.setVisible(false);
                 finishedSingleChoicePane.toFront();
                 finishedMultipleChoicePane.toBack();
                 finishedWordPane.toBack();
-
                 finishedSingleChoiceQuestionImagePane.setVisible(true);
-                if(singleChoiceQuestion.getImagePath()!=null) {
-                    finishedSingleChoiceQuestionImageView.setImage(new Image(singleChoiceQuestion.getImagePath()));
-                    finishedSingleChoiceQuestionImageView.setVisible(true);
-                    finishedSingleChoiceQuestionImageView.toFront();
-                }
-                finishedMultipleChoiceQuestionImagePane.setVisible(false);
-                finishedWordQuestionImagePane.setVisible(false);
                 finishedSingleChoiceQuestionImagePane.toFront();
+                finishedMultipleChoiceQuestionImagePane.setVisible(false);
                 finishedMultipleChoiceQuestionImagePane.toBack();
+                finishedWordQuestionImagePane.setVisible(false);
                 finishedWordQuestionImagePane.toBack();
-
             }
-            case "Multiple choice question"->{
+            case "Multiple choice question" -> {
                 MultipleChoiceQuestion multipleChoiceQuestion = (MultipleChoiceQuestion) question;
                 checkBoxFinishedAnswer1.setText(multipleChoiceQuestion.getAnswerOptions().get(0).getText());
                 checkBoxFinishedAnswer2.setText(multipleChoiceQuestion.getAnswerOptions().get(1).getText());
                 checkBoxFinishedAnswer3.setText(multipleChoiceQuestion.getAnswerOptions().get(2).getText());
                 checkBoxFinishedAnswer4.setText(multipleChoiceQuestion.getAnswerOptions().get(3).getText());
                 checkBoxFinishedAnswer5.setText(multipleChoiceQuestion.getAnswerOptions().get(4).getText());
-                checkBoxFinishedAnswer1.setDisable(true);
-                checkBoxFinishedAnswer2.setDisable(true);
-                checkBoxFinishedAnswer3.setDisable(true);
-                checkBoxFinishedAnswer4.setDisable(true);
-                checkBoxFinishedAnswer5.setDisable(true);
                 List<Integer> correctAnswerIndices = multipleChoiceQuestion.getCorrectAnswerIndexes();
                 checkBoxFinishedAnswer1.setSelected(correctAnswerIndices.contains(0));
                 checkBoxFinishedAnswer2.setSelected(correctAnswerIndices.contains(1));
                 checkBoxFinishedAnswer3.setSelected(correctAnswerIndices.contains(2));
                 checkBoxFinishedAnswer4.setSelected(correctAnswerIndices.contains(3));
                 checkBoxFinishedAnswer5.setSelected(correctAnswerIndices.contains(4));
+
+                if (question.getImagePath() != null) {
+                    Image image = new Image(question.getImagePath());
+                    finishedMultipleChoiceQuestionImageView.setImage(image);
+                }
 
                 finishedMultipleChoicePane.setVisible(true);
                 finishedSingleChoicePane.setVisible(false);
@@ -531,22 +495,20 @@ public class MyTestController implements Initializable {
                 finishedSingleChoicePane.toBack();
                 finishedWordPane.toBack();
                 finishedMultipleChoiceQuestionImagePane.setVisible(true);
-                if(multipleChoiceQuestion.getImagePath()!=null) {
-                    finishedMultipleChoiceQuestionImageView.setImage(new Image(multipleChoiceQuestion.getImagePath()));
-                    finishedMultipleChoiceQuestionImageView.setVisible(true);
-                    finishedMultipleChoiceQuestionImageView.toFront();
-                }
-                finishedSingleChoiceQuestionImagePane.setVisible(false);
-                finishedWordQuestionImagePane.setVisible(false);
                 finishedMultipleChoiceQuestionImagePane.toFront();
+                finishedSingleChoiceQuestionImagePane.setVisible(false);
                 finishedSingleChoiceQuestionImagePane.toBack();
+                finishedWordQuestionImagePane.setVisible(false);
                 finishedWordQuestionImagePane.toBack();
 
-
             }
-            case "Word question" ->{
+            case "Word question" -> {
                 WordQuestion wordQuestion = (WordQuestion) question;
                 wordFinishedAnswer.setText(wordQuestion.getCorrectAnswer());
+                if (question.getImagePath() != null) {
+                    Image image = new Image(question.getImagePath());
+                    finishedWordQuestionImageView.setImage(image);
+                }
                 finishedWordPane.setVisible(true);
                 finishedMultipleChoicePane.setVisible(false);
                 finishedSingleChoicePane.setVisible(false);
@@ -554,87 +516,82 @@ public class MyTestController implements Initializable {
                 finishedMultipleChoicePane.toBack();
                 finishedSingleChoicePane.toBack();
                 finishedWordQuestionImagePane.setVisible(true);
-                if(wordQuestion.getImagePath()!=null) {
-                    finishedWordQuestionImageView.setImage(new Image(wordQuestion.getImagePath()));
-                    finishedWordQuestionImageView.setVisible(true);
-                    finishedWordQuestionImageView.toFront();
-                }
-                finishedSingleChoiceQuestionImagePane.setVisible(false);
-                finishedMultipleChoiceQuestionImagePane.setVisible(false);
                 finishedWordQuestionImagePane.toFront();
-                finishedSingleChoiceQuestionImagePane.toBack();
+                finishedMultipleChoiceQuestionImagePane.setVisible(false);
                 finishedMultipleChoiceQuestionImagePane.toBack();
+                finishedSingleChoiceQuestionImagePane.setVisible(false);
+                finishedSingleChoiceQuestionImagePane.toBack();
+
             }
         }
 
         labelWeight.setText("Weight: " + question.getWeight());
 
-        /*if(question.getImagePath()!=null) {
-            switch (question.getType()){
-                case "Single choice question" -> finishedSingleChoiceQuestionImageView.setImage(new Image(question.getImagePath()));
-                case "Multiple choice question" -> finishedMultipleChoiceQuestionImageView.setImage(new Image(question.getImagePath()));
-                case "Word question" -> finishedWordQuestionImageView.setImage(new Image(question.getImagePath()));
-            }
-        }*/
 
-
+        finishedPane.setVisible(true);
+        finishedPane.toFront();
+        constructorPane.setVisible(false);
+        constructorPane.toBack();
     }
+
 
     public void addQuestion() {
-        List<Question> questions = myTest.getQuestions();
-
-        clearFinishedWordPane();
-        clearFinishedMultipleChoicePane();
-        clearFinishedSingleChoicePane();
-
-        if (isQuestionFinished) {
-
-            labelQuestion = new Label();
-            setLabelStyle();
-
-            /*switch (questions.get(questionIndex).getType()){
-                case "Single choice question" ->{
-                    clearSingleChoicePane();
-                    clearFinishedSingleChoicePane();
-                }
-                case "Multiple choice question" ->{
-                    clearMultipleChoicePane();
-                    clearFinishedMultipleChoicePane();
-                }
-                case "Word question" ->{
-                    clearWordPane();
-                    clearFinishedWordPane();
-
-                }
-            }*/
-
-            singleChoiceQuestionImageView.setImage(null);
-            multipleChoiceQuestionImageView.setImage(null);
-            wordQuestionImageView.setImage(null);
-            /*singleChoiceQuestionUploadImageButton.toFront();
-            multipleChoiceQuestionUploadImageButton.toFront();
-            wordQuestionUploadImageButton.toFront();*/
-
-            finishedPane.setVisible(false);
-            constructorPane.setVisible(true);
-            constructorPane.toFront();
-            finishedPane.toBack();
-
-            listOfQuestions.getItems().add(labelQuestion);
-            updateLabelQuestionNumbers();
-
-
-            isQuestionFinished = false;
-
-            listOfQuestions.getSelectionModel().clearSelection();
-            listOfQuestions.getSelectionModel().select(questionIndex);
-        }else {
-            DBUtils.showAlertMessage("You haven't finished creating previous question!");
+        if (!isQuestionFinished) {
+            DBUtils.showAlertMessage("Please finish creating the current question.");
+            return;
         }
+
+        clearConstructorPane();
+
+        // Add the new question to the list
+        questionLabel = new Label();
+        setLabelStyle();
+
+        listOfQuestions.getItems().add(questionLabel);
+        updateLabelQuestionNumbers();
+
+        isQuestionFinished = false;
         questionIndex++;
 
+        listOfQuestions.getSelectionModel().clearSelection();
+        listOfQuestions.getSelectionModel().select(questionIndex);
 
+        constructorPane.setVisible(true);
+        constructorPane.toFront();
+        finishedPane.setVisible(false);
+        finishedPane.toBack();
     }
+
+    private void clearConstructorPane() {
+        // Clear the fields in the constructor pane
+        fieldQuestionText.clear();
+        choiceBoxQuestionType.getSelectionModel().clearSelection();
+        choiceBoxWeight.getSelectionModel().clearSelection();
+        checkBoxAnswer1.setSelected(false);
+        checkBoxAnswer2.setSelected(false);
+        checkBoxAnswer3.setSelected(false);
+        checkBoxAnswer4.setSelected(false);
+        checkBoxAnswer5.setSelected(false);
+        fieldAnswer1.clear();
+        fieldAnswer2.clear();
+        fieldAnswer3.clear();
+        fieldAnswer4.clear();
+        fieldMultipleAnswer1.clear();
+        fieldMultipleAnswer2.clear();
+        fieldMultipleAnswer3.clear();
+        fieldMultipleAnswer4.clear();
+        fieldMultipleAnswer5.clear();
+        tfWordAnswer.clear();
+        singleChoiceQuestionImageView.setImage(null);
+        multipleChoiceQuestionImageView.setImage(null);
+        wordQuestionImageView.setImage(null);
+        singleChoiceQuestionUploadImageButton.toFront();
+        multipleChoiceQuestionUploadImageButton.toFront();
+        wordQuestionUploadImageButton.toFront();
+    }
+
+
+
 
     public void changeQuestion(){
         isQuestionChanging = true;
@@ -694,18 +651,12 @@ public class MyTestController implements Initializable {
                 singleChoicePane.toFront();
                 multipleChoicePane.toBack();
                 wordPane.toBack();
-                if(singleChoiceQuestion.getImagePath()!=null){
-                    singleChoiceQuestionImageView.setImage(new Image(singleChoiceQuestion.getImagePath()));
-                }
-                if(selectedFile!=null){
-                    singleChoiceQuestionImageView.setImage(new Image(selectedFile.getAbsolutePath()));
-                }
-                singleChoiceQuestionImagePane.setVisible(true);
                 singleChoiceQuestionImageView.setVisible(true);
                 multipleChoiceQuestionImageView.setVisible(false);
                 wordQuestionImageView.setVisible(false);
-                singleChoiceQuestionImagePane.toFront();
                 singleChoiceQuestionImageView.toFront();
+                multipleChoiceQuestionImageView.toBack();
+                wordQuestionImageView.toBack();
             }
 
             case "Multiple choice question" ->{
@@ -730,26 +681,16 @@ public class MyTestController implements Initializable {
                 multipleChoicePane.toFront();
                 singleChoicePane.toBack();
                 wordPane.toBack();
-                if(multipleChoiceQuestion.getImagePath()!=null) {
-                    multipleChoiceQuestionImageView.setImage(new Image(multipleChoiceQuestion.getImagePath()));
-                }
-                if(selectedFile!=null){
-                    multipleChoiceQuestionImageView.setImage(new Image(selectedFile.getAbsolutePath()));
-                }
-                multipleChoiceQuestionImagePane.setVisible(true);
                 multipleChoiceQuestionImageView.setVisible(true);
-                singleChoiceQuestionImagePane.setVisible(false);
                 singleChoiceQuestionImageView.setVisible(false);
-                wordQuestionImagePane.setVisible(false);
                 wordQuestionImageView.setVisible(false);
-                multipleChoiceQuestionImagePane.toFront();
                 multipleChoiceQuestionImageView.toFront();
-
+                singleChoiceQuestionImageView.toBack();
+                wordQuestionImageView.toBack();
 
             }
             case "Word question" ->{
                 WordQuestion wordQuestion = (WordQuestion) question;
-                fieldQuestionText.setText(wordQuestion.getQuestionText());
                 tfWordAnswer.setText(wordQuestion.getCorrectAnswer());
                 choiceBoxQuestionType.setValue(wordQuestion.getType());
                 wordPane.setVisible(true);
@@ -758,29 +699,22 @@ public class MyTestController implements Initializable {
                 wordPane.toFront();
                 multipleChoicePane.toBack();
                 singleChoicePane.toBack();
-                if(wordQuestion.getImagePath()!=null){
-                    wordQuestionImageView.setImage(new Image(wordQuestion.getImagePath()));
-                }
-                if(selectedFile!=null){
-                    wordQuestionImageView.setImage(new Image(selectedFile.getAbsolutePath()));
-                }
-                wordQuestionImagePane.setVisible(true);
                 wordQuestionImageView.setVisible(true);
                 singleChoiceQuestionImageView.setVisible(false);
                 multipleChoiceQuestionImageView.setVisible(false);
-                wordQuestionImagePane.toFront();
                 wordQuestionImageView.toFront();
-
+                singleChoiceQuestionImageView.toBack();
+                multipleChoiceQuestionImageView.toBack();
             }
         }
 
-       /* if(question.getImagePath()!=null){
+        if(question.getImagePath()!=null){
             switch (question.getType()){
                 case "Single choice question" -> singleChoiceQuestionImageView.setImage(new Image(question.getImagePath()));
                 case "Multiple choice question" -> multipleChoiceQuestionImageView.setImage(new Image(question.getImagePath()));
                 case "Word question" -> wordQuestionImageView.setImage(new Image(question.getImagePath()));
             }
-        }*/
+        }
 
         labelWeight.setText("Weight: " + question.getWeight());
 
@@ -824,7 +758,7 @@ public class MyTestController implements Initializable {
                 System.out.println("Error while downloading image: "+ e.getMessage());
             }
         }
-       singleChoiceQuestionImageView.toFront();
+        singleChoiceQuestionImageView.toFront();
     }
     public void uploadImageToMultipleChoiceQuestionImagePane(){
         FileChooser fileChooser = new FileChooser();
@@ -969,68 +903,57 @@ public class MyTestController implements Initializable {
         }
     }
 
-    public void setLabelStyle() {
-        labelQuestion.setPrefSize(169, 25);
-        labelQuestion.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;");
-        Font font = Font.font("Consolas", FontWeight.BOLD, 12);
-        labelQuestion.setFont(font);
-        labelQuestion.setText("Question" + (questionIndex + 1));
-    }
-
     private void showQuestionTypePane(String questionType) {
         singleChoicePane.setVisible(false);
         multipleChoicePane.setVisible(false);
         wordPane.setVisible(false);
 
         switch (questionType) {
-            case "Single choice question" ->{
-                singleChoicePane.setVisible(true);
-                if(isQuestionChanging){
-                    int indexOfChangingQuestion = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    singleChoiceQuestionImageView.setImage(new Image(myTest.getQuestions().get(indexOfChangingQuestion).getImagePath()));
-                    choiceBoxWeight.setValue(myTest.getQuestions().get(indexOfChangingQuestion).getWeight());
-                    singleChoiceQuestionImageView.setVisible(true);
-                    singleChoiceQuestionImageView.toFront();
-                    singleChoiceQuestionImagePane.setVisible(true);
-                    singleChoiceQuestionImagePane.toFront();
-                    multipleChoiceQuestionImagePane.setVisible(false);
-                    wordQuestionImagePane.setVisible(false);
-                }
-            }
-            case "Multiple choice question" -> {
-                multipleChoicePane.setVisible(true);
-                if(isQuestionChanging){
-                    int indexOfChangingQuestion = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    multipleChoiceQuestionImageView.setImage(new Image(myTest.getQuestions().get(indexOfChangingQuestion).getImagePath()));
-                    choiceBoxWeight.setValue(myTest.getQuestions().get(indexOfChangingQuestion).getWeight());
-                    multipleChoiceQuestionImageView.setVisible(true);
-                    multipleChoiceQuestionImageView.toFront();
-                    multipleChoiceQuestionImagePane.setVisible(true);
-                    multipleChoiceQuestionImagePane.toFront();
-                    singleChoiceQuestionImagePane.setVisible(false);
-                    wordQuestionImagePane.setVisible(false);
-                }
-            }
-            case "Word question" -> {
-                wordPane.setVisible(true);
-                if(isQuestionChanging){
-                    int indexOfChangingQuestion = listOfQuestions.getSelectionModel().getSelectedIndex();
-                    wordQuestionImageView.setImage(new Image(myTest.getQuestions().get(indexOfChangingQuestion).getImagePath()));
-                    choiceBoxWeight.setValue(myTest.getQuestions().get(indexOfChangingQuestion).getWeight());
-                    wordQuestionImageView.setVisible(true);
-                    wordQuestionImageView.toFront();
-                    wordQuestionImagePane.setVisible(true);
-                    wordQuestionImagePane.toFront();
-                    singleChoiceQuestionImagePane.setVisible(false);
-                    multipleChoiceQuestionImagePane.setVisible(false);
-                }
-            }
+            case "Single choice question" -> singleChoicePane.setVisible(true);
+            case "Multiple choice question" -> multipleChoicePane.setVisible(true);
+            case "Word question" -> wordPane.setVisible(true);
         }
-
     }
 
 
+    public void setLabelStyle() {
+        questionLabel.setPrefSize(169, 25);
+        questionLabel.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;");
+        Font font = Font.font("Consolas", FontWeight.BOLD, 12);
+        questionLabel.setFont(font);
+        questionLabel.setText("Question" + (questionIndex + 1));
+    }
 
+    public void setLabelStyle(Label label) {
+        label.setPrefSize(169, 25);
+        label.setStyle("-fx-background-color: #000000; -fx-text-fill: #ffffff;");
+        Font font = Font.font("Consolas", FontWeight.BOLD, 12);
+        label.setFont(font);
+    }
+
+    public void initializeController() {
+        if (questions != null && !questions.isEmpty()) {
+            for (int i = 0; i < questions.size(); i++) {
+                questionLabel = new Label("Question" + (i + 1));
+                setLabelStyle(questionLabel);
+                listOfQuestions.getItems().add(questionLabel);
+            }
+            testNameLabel.setText(testNameLabel.getText() + myTest.getName());
+            testDeadlineLabel.setText(testDeadlineLabel.getText() + myTest.getDeadline());
+
+            listOfQuestions.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                int index = listOfQuestions.getSelectionModel().getSelectedIndex();
+                displayQuestionDetails(index);
+            });
+
+            listOfQuestions.getSelectionModel().select(0); // Select the first question by default
+        }
+    }
+
+
+    public static Test getMyTest(){
+        return myTest;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -1043,23 +966,33 @@ public class MyTestController implements Initializable {
             showQuestionTypePane(selectedQuestionType);
         });
 
-        listOfQuestions.getItems().add(labelQuestion);
-        listOfQuestions.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
-                int questionIndex = listOfQuestions.getSelectionModel().getSelectedIndex();
-                displayQuestionDetails(questionIndex);
+        if (questions != null && !questions.isEmpty() ) {
+            for (int i = 0; i < questions.size(); i++) {
+                questionLabel = new Label("Question" + (i + 1));
+                setLabelStyle(questionLabel);
+                listOfQuestions.getItems().add(questionLabel);
+            }
 
+        }
+        testNameLabel.setText(myTest.getName());
+        testDeadlineLabel.setText(myTest.getDeadline());
+
+        listOfQuestions.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue!=null) {
+                int index = listOfQuestions.getSelectionModel().getSelectedIndex();
+                displayQuestionDetails(index);
             }
         });
 
+
         buttonPreviewTest.setOnAction(event -> {
-            DBUtils.changeSceneToPreviewTestController(event, "test_preview.fxml","test_preview", myTest,1030, 480);
+            DBUtils.changeScene(event, "test_preview.fxml", 480, 480);
         });
 
         buttonSaveTest.setOnAction(event -> {
             DBUtils.changeSceneToSaveTestController(event, "test_name_window.fxml","test", authorNickname,myTest,280, 150);
         });
 
-
     }
+
 }

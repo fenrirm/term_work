@@ -6,6 +6,7 @@ public class SingleChoiceQuestion extends Question{
 
     private List<AnswerOption> answerOptions;
     private int correctAnswerIndex;
+    private String type;
 
     public SingleChoiceQuestion(String questionText, List<AnswerOption> answerOptions, int weight) {
         super(questionText, weight);
@@ -22,6 +23,10 @@ public class SingleChoiceQuestion extends Question{
 
     public int getCorrectAnswerIndex() {
         return correctAnswerIndex;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="593.0" prefWidth="733.0" style="-fx-background-color: #b7f9ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxlogin.ChangeTestController">
+    <children>
+        <ListView fx:id="listOfQuestions" layoutX="14.0" layoutY="35.0" prefHeight="449.0" prefWidth="181.0" style="-fx-background-color: #496366;" />
+        <Label alignment="CENTER" layoutX="20.0" layoutY="9.0" prefHeight="25.0" prefWidth="169.0" text="Test questions:">
+            <font>
+                <Font name="Consolas Bold" size="12.0" />
+            </font>
+        </Label>
+        <StackPane fx:id="stackPane" layoutX="222.0" layoutY="35.0" prefHeight="449.0" prefWidth="470.0">
+            <children>
+                <Pane fx:id="finishedPane" prefHeight="449.0" prefWidth="470.0" style="-fx-background-color: #496366;">
+                    <children>
+                        <StackPane fx:id="finishedImageViewStackPane" layoutX="21.0" layoutY="269.0" prefHeight="158.0" prefWidth="274.0">
+                            <children>
+                                <Pane fx:id="finishedSingleChoiceQuestionImagePane" prefHeight="161.0" prefWidth="267.0">
+                                    <children>
+                                        <ImageView fx:id="finishedSingleChoiceQuestionImageView" fitHeight="158.0" fitWidth="267.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="finishedMultipleChoiceQuestionImagePane" prefHeight="161.0" prefWidth="267.0">
+                                    <children>
+                                        <ImageView fx:id="finishedMultipleChoiceQuestionImageView" fitHeight="158.0" fitWidth="267.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="finishedWordQuestionImagePane" prefHeight="161.0" prefWidth="267.0">
+                                    <children>
+                                        <ImageView fx:id="finishedWordQuestionImageView" fitHeight="158.0" fitWidth="267.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </StackPane>
+                        <Label fx:id="labelQuestionText" layoutX="14.0" layoutY="22.0" prefHeight="36.0" prefWidth="304.0" text="Question:" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <StackPane fx:id="finishedAnswerTypeStackPane" layoutX="14.0" layoutY="58.0" prefHeight="166.0" prefWidth="386.0">
+                            <children>
+                                <Pane fx:id="finishedWordPane" prefHeight="166.0" prefWidth="386.0" visible="false">
+                                    <children>
+                                        <Label fx:id="wordFinishedAnswer" layoutX="28.0" layoutY="22.0" prefHeight="25.0" prefWidth="332.0" text="answer" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="finishedMultipleChoicePane" prefHeight="166.0" prefWidth="386.0" visible="false">
+                                    <children>
+                                        <CheckBox fx:id="checkBoxFinishedAnswer1" layoutX="28.0" layoutY="28.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer1" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxFinishedAnswer2" layoutX="28.0" layoutY="50.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer2" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxFinishedAnswer3" layoutX="28.0" layoutY="72.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer3" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxFinishedAnswer4" layoutX="28.0" layoutY="94.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer4" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxFinishedAnswer5" layoutX="28.0" layoutY="116.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer5" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="finishedSingleChoicePane" prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <RadioButton fx:id="rbFinishedAnswer1" layoutX="29.0" layoutY="28.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer1" textFill="WHITE">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="finishedAnswers" />
+                                            </toggleGroup>
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rbFinishedAnswer2" layoutX="29.0" layoutY="58.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer2" textFill="WHITE" toggleGroup="$finishedAnswers">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rbFinishedAnswer3" layoutX="29.0" layoutY="86.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer3" textFill="WHITE" toggleGroup="$finishedAnswers">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rbFinishedAnswer4" layoutX="29.0" layoutY="117.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="332.0" text="answer4" textFill="WHITE" toggleGroup="$finishedAnswers">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </StackPane>
+                        <Label fx:id="labelWeight" layoutX="14.0" layoutY="233.0" prefHeight="25.0" prefWidth="69.0" text="Weight:" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane fx:id="constructorPane" prefHeight="449.0" prefWidth="470.0" style="-fx-background-color: #496366;">
+                    <children>
+                        <Label layoutX="14.0" layoutY="22.0" prefHeight="36.0" prefWidth="115.0" text="Question text:" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="fieldQuestionText" layoutX="156.0" layoutY="28.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter a question">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="303.0" prefHeight="25.0" prefWidth="87.0" text="Weight:" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="buttonDone" layoutX="54.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleDoneButtonAction" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Done" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <ChoiceBox fx:id="choiceBoxWeight" layoutX="105.0" layoutY="303.0" prefHeight="25.0" prefWidth="49.0" />
+                        <StackPane fx:id="imageViewStackPane" layoutX="165.0" layoutY="272.0" prefHeight="166.0" prefWidth="274.0">
+                            <children>
+                                <Pane fx:id="singleChoiceQuestionImagePane" prefHeight="173.0" prefWidth="274.0">
+                                    <children>
+                                        <ImageView fx:id="singleChoiceQuestionImageView" fitHeight="142.0" fitWidth="274.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button fx:id="singleChoiceQuestionUploadImageButton" layoutX="83.0" layoutY="140.0" mnemonicParsing="false" onAction="#uploadImageToSingleChoiceQuestionImagePane" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload image" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="multipleChoiceQuestionImagePane" prefHeight="176.0" prefWidth="274.0" visible="false">
+                                    <children>
+                                        <ImageView fx:id="multipleChoiceQuestionImageView" fitHeight="142.0" fitWidth="274.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button fx:id="multipleChoiceQuestionUploadImageButton" layoutX="83.0" layoutY="140.0" mnemonicParsing="false" onAction="#uploadImageToMultipleChoiceQuestionImagePane" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload image" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="wordQuestionImagePane" prefHeight="135.0" prefWidth="274.0" visible="false">
+                                    <children>
+                                        <ImageView fx:id="wordQuestionImageView" fitHeight="142.0" fitWidth="274.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
+                                        <Button fx:id="wordQuestionUploadImageButton" layoutX="83.0" layoutY="140.0" mnemonicParsing="false" onAction="#uploadImageToWordQuestionPane" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Upload image" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </StackPane>
+                        <ChoiceBox fx:id="choiceBoxQuestionType" layoutX="156.0" layoutY="70.0" prefWidth="150.0" />
+                        <Label layoutX="14.0" layoutY="74.0" prefHeight="25.0" prefWidth="115.0" text="Choose type:" textFill="WHITE">
+                            <font>
+                                <Font name="Consolas Bold" size="13.0" />
+                            </font>
+                        </Label>
+                        <StackPane fx:id="questionTypeConstructorStackPane" layoutY="105.0" prefHeight="185.0" prefWidth="470.0">
+                            <children>
+                                <Pane fx:id="multipleChoicePane" prefHeight="181.0" prefWidth="463.0" visible="false">
+                                    <children>
+                                        <CheckBox fx:id="checkBoxAnswer1" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer1:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxAnswer2" layoutX="25.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer2:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxAnswer3" layoutX="25.0" layoutY="82.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer3:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxAnswer4" layoutX="25.0" layoutY="109.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer4:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <CheckBox fx:id="checkBoxAnswer5" layoutX="25.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer5:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </CheckBox>
+                                        <TextField fx:id="fieldMultipleAnswer1" layoutX="160.0" layoutY="24.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="fieldMultipleAnswer2" layoutX="160.0" layoutY="53.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="fieldMultipleAnswer3" layoutX="160.0" layoutY="82.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="fieldMultipleAnswer4" layoutX="160.0" layoutY="109.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="fieldMultipleAnswer5" layoutX="160.0" layoutY="137.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="wordPane" prefHeight="181.0" prefWidth="463.0" visible="false">
+                                    <children>
+                                        <Label fx:id="labelWordAnswer" layoutX="38.0" layoutY="32.0" prefHeight="25.0" prefWidth="115.0" text="answer:" textFill="WHITE">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="tfWordAnswer" layoutX="166.0" layoutY="32.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </Pane>
+                                <Pane fx:id="singleChoicePane" prefHeight="163.0" prefWidth="463.0">
+                                    <children>
+                                        <RadioButton fx:id="rbAnswer1" layoutX="24.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer1:" textFill="WHITE">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="answers" />
+                                            </toggleGroup>
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <TextField fx:id="fieldAnswer1" layoutX="166.0" layoutY="32.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <RadioButton fx:id="rbAnswer2" layoutX="24.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer2:" textFill="WHITE" toggleGroup="$answers">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <TextField fx:id="fieldAnswer2" layoutX="166.0" layoutY="64.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <RadioButton fx:id="rbAnswer3" layoutX="24.0" layoutY="97.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer3:" textFill="WHITE" toggleGroup="$answers">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <TextField fx:id="fieldAnswer3" layoutX="166.0" layoutY="97.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                        <RadioButton fx:id="rbAnswer4" layoutX="24.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="answer4:" textFill="WHITE" toggleGroup="$answers">
+                                            <font>
+                                                <Font name="System Bold" size="13.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <TextField fx:id="fieldAnswer4" layoutX="166.0" layoutY="129.0" prefHeight="25.0" prefWidth="274.0" promptText="Enter an answer">
+                                            <font>
+                                                <Font name="Consolas Bold" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </StackPane>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+        <Pane layoutX="255.0" layoutY="492.0" prefHeight="45.0" prefWidth="430.0">
+            <children>
+                <Button fx:id="buttonAddQuestion" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#addQuestion" prefHeight="22.0" prefWidth="115.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Add question" textFill="WHITE">
+                    <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                    </font></Button>
+                <Button fx:id="buttonChangeQuestion" layoutX="301.0" layoutY="11.0" mnemonicParsing="false" onAction="#changeQuestion" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Change question" textFill="WHITE">
+                    <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                    </font></Button>
+                <Button fx:id="buttonDeleteQuestion" layoutX="158.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteQuestion" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Delete question" textFill="WHITE">
+                    <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                    </font></Button>
+            </children>
+        </Pane>
+        <Pane layoutX="33.0" layoutY="495.0" prefHeight="83.0" prefWidth="144.0">
+            <children>
+                <Button fx:id="buttonSaveTest" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="115.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Save test" textFill="WHITE">
+                    <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                    </font></Button>
+                <Button fx:id="buttonPreviewTest" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="115.0" style="-fx-background-color: #000000; -fx-cursor: hand;" text="Preview test" textFill="WHITE">
+                    <font>
+                        <Font name="Consolas Bold" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+      <Label fx:id="testNameLabel" layoutX="222.0" layoutY="8.0" prefHeight="22.0" prefWidth="229.0" text="Test name:">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="testDeadlineLabel" layoutX="462.0" layoutY="8.0" prefHeight="22.0" prefWidth="229.0" text="Test deadline:">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

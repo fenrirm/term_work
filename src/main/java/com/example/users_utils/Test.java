@@ -7,18 +7,36 @@ public class Test {
     private String name;
     private String deadline;
     private List<Question> questions;
-    private String authorPhone;
+    private String authorNickname;
     private int testId;
+    private double testResult;
 
     public Test(){
         this.questions = new ArrayList<>();
     }
 
-    public Test(int testId, String testName, String testDeadline, String authorPhone){
+    public Test(int testId, String testName, String testDeadline, String authorNickname){
         this.testId = testId;
         this.name = testName;
         this.deadline = testDeadline;
-        this.authorPhone = authorPhone;
+        this.authorNickname = authorNickname;
+    }
+
+    public Test(int testId, String testName, double testResult){
+        this.testId = testId;
+        this.name = testName;
+        this.testResult = testResult;
+    }
+
+    public Test(Test test){
+        this.name = test.getName();
+        this.deadline = test.getDeadline();
+        this.authorNickname = test.getAuthorNickname();
+        this.questions = test.getQuestions();
+    }
+
+    public double getTestResult() {
+        return testResult;
     }
 
     public int getId(){
@@ -37,6 +55,9 @@ public class Test {
     public Question getQuestion(int index){
         return questions.get(index);
     }
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
     public void setDeadline(String deadline){
         this.deadline = deadline;
     }
@@ -53,11 +74,11 @@ public class Test {
         return deadline;
     }
 
-    public void setAuthorPhone(String authorPhone) {
-        this.authorPhone = authorPhone;
+    public void setAuthorNickname(String authorNickname) {
+        this.authorNickname = authorNickname;
     }
 
     public String getAuthorNickname() {
-        return authorPhone;
+        return authorNickname;
     }
 }

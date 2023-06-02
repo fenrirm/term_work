@@ -31,17 +31,12 @@
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
             </Label>
-            <Label fx:id="createGroupsLabel" alignment="CENTER" layoutX="25.0" layoutY="333.0" prefHeight="28.0" prefWidth="227.0" text="- create groups" textFill="WHITE">
+            <Label fx:id="createGroupsLabel" alignment="CENTER" layoutX="25.0" layoutY="333.0" prefHeight="28.0" prefWidth="227.0" text="- create courses" textFill="WHITE">
                 <font>
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
             </Label>
             <Label fx:id="getResultsLabel" alignment="CENTER" layoutX="25.0" layoutY="409.0" prefHeight="28.0" prefWidth="227.0" text="- get results" textFill="WHITE">
-                <font>
-                    <Font name="Consolas Bold" size="15.0" />
-                </font>
-            </Label>
-            <Label fx:id="getStatisticsLabel" alignment="CENTER" layoutX="31.0" layoutY="447.0" prefHeight="28.0" prefWidth="227.0" text="- get statistics" textFill="WHITE">
                 <font>
                     <Font name="Consolas Bold" size="15.0" />
                 </font>
@@ -114,18 +109,6 @@
                   <PasswordField fx:id="tf_password" layoutX="181.0" layoutY="359.0" prefHeight="25.0" prefWidth="168.0" />
                 </children>
             </Pane>
-            <Button fx:id="uaLanguageButton" layoutX="308.0" layoutY="542.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
-            <Button fx:id="enLanguageButton" layoutX="355.0" layoutY="542.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="35.0" style="-fx-cursor: hand; -fx-background-color: #0181FF;" />
-            <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="316.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../ukraine.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="362.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../american.png" />
-               </image>
-            </ImageView>
         </children>
     </AnchorPane>
 </children>
